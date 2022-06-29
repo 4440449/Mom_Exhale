@@ -39,10 +39,20 @@
 		94AB0D0E286C3F8400742A33 /* GatewaysRepositoryDIContainer_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AB0CF9286B510500742A33 /* GatewaysRepositoryDIContainer_ME.swift */; };
 		94AB0D11286C3F8400742A33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94AB0CCB286A50C300742A33 /* LaunchScreen.storyboard */; };
 		94AB0D12286C3F8400742A33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94AB0CC9286A50C300742A33 /* Assets.xcassets */; };
+		94B0D173286C79910006899B /* MommysEye in Frameworks */ = {isa = PBXBuildFile; productRef = 94B0D172286C79910006899B /* MommysEye */; };
+		94B0D176286C799B0006899B /* BabyNet in Frameworks */ = {isa = PBXBuildFile; productRef = 94B0D175286C799B0006899B /* BabyNet */; };
+		94B0D178286C79BD0006899B /* MommysEye in Frameworks */ = {isa = PBXBuildFile; productRef = 94B0D177286C79BD0006899B /* MommysEye */; };
+		94B0D17A286C79C00006899B /* BabyNet in Frameworks */ = {isa = PBXBuildFile; productRef = 94B0D179286C79C00006899B /* BabyNet */; };
+		94B0D18F286C96A70006899B /* SPM_TEST in Frameworks */ = {isa = PBXBuildFile; productRef = 94B0D18E286C96A70006899B /* SPM_TEST */; };
+		94B0D195286C9F4C0006899B /* Montserrat-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 94B0D190286C9F4C0006899B /* Montserrat-Black.ttf */; };
+		94B0D196286C9F4C0006899B /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 94B0D191286C9F4C0006899B /* Montserrat-Regular.ttf */; };
+		94B0D197286C9F4C0006899B /* Montserrat-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 94B0D192286C9F4C0006899B /* Montserrat-ExtraBold.ttf */; };
+		94B0D198286C9F4C0006899B /* Montserrat-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 94B0D193286C9F4C0006899B /* Montserrat-Thin.ttf */; };
+		94B0D199286C9F4C0006899B /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 94B0D194286C9F4C0006899B /* Montserrat-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		94AB0CBD286A50C200742A33 /* Mom Exhale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mom Exhale.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		94AB0CBD286A50C200742A33 /* Mom_Exhale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mom_Exhale.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94AB0CC0286A50C200742A33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94AB0CC2286A50C200742A33 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		94AB0CC4286A50C200742A33 /* MainViewController_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController_ME.swift; sourceTree = "<group>"; };
@@ -60,8 +70,13 @@
 		94AB0CF4286B49EA00742A33 /* ModuleRepository_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleRepository_ME.swift; sourceTree = "<group>"; };
 		94AB0CF9286B510500742A33 /* GatewaysRepositoryDIContainer_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewaysRepositoryDIContainer_ME.swift; sourceTree = "<group>"; };
 		94AB0CFC286B696A00742A33 /* GlobalRouter_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalRouter_ME.swift; sourceTree = "<group>"; };
-		94AB0D16286C3F8400742A33 /* Mom Exhale Root App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mom Exhale Root App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		94AB0D17286C3F8400742A33 /* Mom Exhale Root App Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Mom Exhale Root App Info.plist"; sourceTree = "<group>"; };
+		94AB0D16286C3F8400742A33 /* Mom_Exhale Root App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mom_Exhale Root App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		94AB0D17286C3F8400742A33 /* Mom_Exhale Root App Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Mom_Exhale Root App Info.plist"; sourceTree = "<group>"; };
+		94B0D190286C9F4C0006899B /* Montserrat-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Black.ttf"; sourceTree = "<group>"; };
+		94B0D191286C9F4C0006899B /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		94B0D192286C9F4C0006899B /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.ttf"; sourceTree = "<group>"; };
+		94B0D193286C9F4C0006899B /* Montserrat-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Thin.ttf"; sourceTree = "<group>"; };
+		94B0D194286C9F4C0006899B /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +84,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94B0D176286C799B0006899B /* BabyNet in Frameworks */,
+				94B0D173286C79910006899B /* MommysEye in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +93,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94B0D17A286C79C00006899B /* BabyNet in Frameworks */,
+				94B0D18F286C96A70006899B /* SPM_TEST in Frameworks */,
+				94B0D178286C79BD0006899B /* MommysEye in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,22 +105,23 @@
 		94AB0CB4286A50C200742A33 = {
 			isa = PBXGroup;
 			children = (
-				94AB0CBF286A50C200742A33 /* Mom Exhale */,
+				94AB0CBF286A50C200742A33 /* Mom_Exhale */,
+				94AB0D17286C3F8400742A33 /* Mom_Exhale Root App Info.plist */,
 				94AB0CBE286A50C200742A33 /* Products */,
-				94AB0D17286C3F8400742A33 /* Mom Exhale Root App Info.plist */,
+				94B0D16E286C67F30006899B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		94AB0CBE286A50C200742A33 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				94AB0CBD286A50C200742A33 /* Mom Exhale.app */,
-				94AB0D16286C3F8400742A33 /* Mom Exhale Root App.app */,
+				94AB0CBD286A50C200742A33 /* Mom_Exhale.app */,
+				94AB0D16286C3F8400742A33 /* Mom_Exhale Root App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		94AB0CBF286A50C200742A33 /* Mom Exhale */ = {
+		94AB0CBF286A50C200742A33 /* Mom_Exhale */ = {
 			isa = PBXGroup;
 			children = (
 				94AB0CDC286B44F200742A33 /* Source */,
@@ -108,10 +129,15 @@
 				94AB0CF8286B4B7800742A33 /* Data */,
 				94AB0CDB286B44B400742A33 /* Presentation */,
 				94AB0CC9286A50C300742A33 /* Assets.xcassets */,
+				94B0D190286C9F4C0006899B /* Montserrat-Black.ttf */,
+				94B0D194286C9F4C0006899B /* Montserrat-Bold.ttf */,
+				94B0D192286C9F4C0006899B /* Montserrat-ExtraBold.ttf */,
+				94B0D191286C9F4C0006899B /* Montserrat-Regular.ttf */,
+				94B0D193286C9F4C0006899B /* Montserrat-Thin.ttf */,
 				94AB0CCB286A50C300742A33 /* LaunchScreen.storyboard */,
 				94AB0CCE286A50C300742A33 /* Info.plist */,
 			);
-			path = "Mom Exhale";
+			path = Mom_Exhale;
 			sourceTree = "<group>";
 		};
 		94AB0CD4286A511500742A33 /* View */ = {
@@ -284,12 +310,19 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		94B0D16E286C67F30006899B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		94AB0CBC286A50C200742A33 /* Mom Exhale */ = {
+		94AB0CBC286A50C200742A33 /* Mom_Exhale */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 94AB0CD1286A50C300742A33 /* Build configuration list for PBXNativeTarget "Mom Exhale" */;
+			buildConfigurationList = 94AB0CD1286A50C300742A33 /* Build configuration list for PBXNativeTarget "Mom_Exhale" */;
 			buildPhases = (
 				94AB0CB9286A50C200742A33 /* Sources */,
 				94AB0CBA286A50C200742A33 /* Frameworks */,
@@ -299,14 +332,18 @@
 			);
 			dependencies = (
 			);
-			name = "Mom Exhale";
+			name = Mom_Exhale;
+			packageProductDependencies = (
+				94B0D172286C79910006899B /* MommysEye */,
+				94B0D175286C799B0006899B /* BabyNet */,
+			);
 			productName = "Moms Exhale";
-			productReference = 94AB0CBD286A50C200742A33 /* Mom Exhale.app */;
+			productReference = 94AB0CBD286A50C200742A33 /* Mom_Exhale.app */;
 			productType = "com.apple.product-type.application";
 		};
-		94AB0CFF286C3F8400742A33 /* Mom Exhale Root App */ = {
+		94AB0CFF286C3F8400742A33 /* Mom_Exhale Root App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 94AB0D13286C3F8400742A33 /* Build configuration list for PBXNativeTarget "Mom Exhale Root App" */;
+			buildConfigurationList = 94AB0D13286C3F8400742A33 /* Build configuration list for PBXNativeTarget "Mom_Exhale Root App" */;
 			buildPhases = (
 				94AB0D00286C3F8400742A33 /* Sources */,
 				94AB0D0F286C3F8400742A33 /* Frameworks */,
@@ -316,9 +353,14 @@
 			);
 			dependencies = (
 			);
-			name = "Mom Exhale Root App";
+			name = "Mom_Exhale Root App";
+			packageProductDependencies = (
+				94B0D177286C79BD0006899B /* MommysEye */,
+				94B0D179286C79C00006899B /* BabyNet */,
+				94B0D18E286C96A70006899B /* SPM_TEST */,
+			);
 			productName = "Moms Exhale";
-			productReference = 94AB0D16286C3F8400742A33 /* Mom Exhale Root App.app */;
+			productReference = 94AB0D16286C3F8400742A33 /* Mom_Exhale Root App.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -336,7 +378,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 94AB0CB8286A50C200742A33 /* Build configuration list for PBXProject "Mom Exhale" */;
+			buildConfigurationList = 94AB0CB8286A50C200742A33 /* Build configuration list for PBXProject "Mom_Exhale" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -345,12 +387,17 @@
 				Base,
 			);
 			mainGroup = 94AB0CB4286A50C200742A33;
+			packageReferences = (
+				94B0D171286C79910006899B /* XCRemoteSwiftPackageReference "MommysEye" */,
+				94B0D174286C799B0006899B /* XCRemoteSwiftPackageReference "BabyNet" */,
+				94B0D18D286C96A70006899B /* XCRemoteSwiftPackageReference "SPM_TEST" */,
+			);
 			productRefGroup = 94AB0CBE286A50C200742A33 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				94AB0CBC286A50C200742A33 /* Mom Exhale */,
-				94AB0CFF286C3F8400742A33 /* Mom Exhale Root App */,
+				94AB0CBC286A50C200742A33 /* Mom_Exhale */,
+				94AB0CFF286C3F8400742A33 /* Mom_Exhale Root App */,
 			);
 		};
 /* End PBXProject section */
@@ -369,8 +416,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94B0D197286C9F4C0006899B /* Montserrat-ExtraBold.ttf in Resources */,
+				94B0D196286C9F4C0006899B /* Montserrat-Regular.ttf in Resources */,
 				94AB0D11286C3F8400742A33 /* LaunchScreen.storyboard in Resources */,
 				94AB0D12286C3F8400742A33 /* Assets.xcassets in Resources */,
+				94B0D198286C9F4C0006899B /* Montserrat-Thin.ttf in Resources */,
+				94B0D195286C9F4C0006899B /* Montserrat-Black.ttf in Resources */,
+				94B0D199286C9F4C0006899B /* Montserrat-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,7 +610,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 49V2NFTYLV;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Mom Exhale/Info.plist";
+				INFOPLIST_FILE = Mom_Exhale/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -585,7 +637,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 49V2NFTYLV;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Mom Exhale/Info.plist";
+				INFOPLIST_FILE = Mom_Exhale/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -612,7 +664,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 49V2NFTYLV;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Mom Exhale Root App Info.plist";
+				INFOPLIST_FILE = "Mom_Exhale Root App Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -622,7 +674,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				OTHER_SWIFT_FLAGS = "";
+				OTHER_SWIFT_FLAGS = "-DROOT_APP";
 				PRODUCT_BUNDLE_IDENTIFIER = "Terpugov-inc.Mom-Exhale";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -640,7 +692,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 49V2NFTYLV;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Mom Exhale Root App Info.plist";
+				INFOPLIST_FILE = "Mom_Exhale Root App Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -650,7 +702,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				OTHER_SWIFT_FLAGS = "";
+				OTHER_SWIFT_FLAGS = "-DROOT_APP";
 				PRODUCT_BUNDLE_IDENTIFIER = "Terpugov-inc.Mom-Exhale";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -662,7 +714,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		94AB0CB8286A50C200742A33 /* Build configuration list for PBXProject "Mom Exhale" */ = {
+		94AB0CB8286A50C200742A33 /* Build configuration list for PBXProject "Mom_Exhale" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				94AB0CCF286A50C300742A33 /* Debug */,
@@ -671,7 +723,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		94AB0CD1286A50C300742A33 /* Build configuration list for PBXNativeTarget "Mom Exhale" */ = {
+		94AB0CD1286A50C300742A33 /* Build configuration list for PBXNativeTarget "Mom_Exhale" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				94AB0CD2286A50C300742A33 /* Debug */,
@@ -680,7 +732,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		94AB0D13286C3F8400742A33 /* Build configuration list for PBXNativeTarget "Mom Exhale Root App" */ = {
+		94AB0D13286C3F8400742A33 /* Build configuration list for PBXNativeTarget "Mom_Exhale Root App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				94AB0D14286C3F8400742A33 /* Debug */,
@@ -690,6 +742,61 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		94B0D171286C79910006899B /* XCRemoteSwiftPackageReference "MommysEye" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/4440449/MommysEye";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		94B0D174286C799B0006899B /* XCRemoteSwiftPackageReference "BabyNet" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/4440449/BabyNet";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		94B0D18D286C96A70006899B /* XCRemoteSwiftPackageReference "SPM_TEST" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/4440449/SPM_TEST.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		94B0D172286C79910006899B /* MommysEye */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 94B0D171286C79910006899B /* XCRemoteSwiftPackageReference "MommysEye" */;
+			productName = MommysEye;
+		};
+		94B0D175286C799B0006899B /* BabyNet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 94B0D174286C799B0006899B /* XCRemoteSwiftPackageReference "BabyNet" */;
+			productName = BabyNet;
+		};
+		94B0D177286C79BD0006899B /* MommysEye */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 94B0D171286C79910006899B /* XCRemoteSwiftPackageReference "MommysEye" */;
+			productName = MommysEye;
+		};
+		94B0D179286C79C00006899B /* BabyNet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 94B0D174286C799B0006899B /* XCRemoteSwiftPackageReference "BabyNet" */;
+			productName = BabyNet;
+		};
+		94B0D18E286C96A70006899B /* SPM_TEST */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 94B0D18D286C96A70006899B /* XCRemoteSwiftPackageReference "SPM_TEST" */;
+			productName = SPM_TEST;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 94AB0CB5286A50C200742A33 /* Project object */;
 }

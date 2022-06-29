@@ -130,6 +130,22 @@ class MainViewController_ME: UIViewController,
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("didSelectItemAt")
+        if indexPath.row == 0 {
+            if let vc = GlobalRouter_ME.initVC(module: .init(id: UUID(),
+                                                 keyName: .BLW,
+                                                             title: "")) {
+            vc.modalPresentationStyle = .overFullScreen
+            self.present(vc, animated: true, completion: nil)
+            }
+        }
+        
+//        viewModel.didSelectItem(index: indexPath.row)
+//        if indexPath.row == 0 {
+//            if let vc = GlobalRouter_ME.initVC(module: .init(id: UUID(), keyName: .BLW, title: "")) {
+//                vc.modalPresentationStyle = .overFullScreen
+//                self.present(vc, animated: true, completion: nil)
+//            }
+//        }
     }
     
     
@@ -137,7 +153,7 @@ class MainViewController_ME: UIViewController,
     
     private func initialUISetup() {
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.topItem?.title = "Mom's Exhale"
+        navigationController?.navigationBar.topItem?.title = "#мамавыдохни"
         navigationController?.navigationBar.topItem?.rightBarButtonItem = userNavBarButton
     }
 }

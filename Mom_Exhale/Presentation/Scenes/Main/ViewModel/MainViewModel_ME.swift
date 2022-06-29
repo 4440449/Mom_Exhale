@@ -8,8 +8,9 @@
 import Foundation
 
 protocol MainViewModelProtocol_ME {
-    func loadInitialState()
     var tmpModules: [Module] { get }
+    func loadInitialState()
+    func didSelectItem(index: Int)
 }
 
 
@@ -17,6 +18,7 @@ protocol MainViewModelProtocol_ME {
 final class MainViewModel_ME: MainViewModelProtocol_ME {
     
     private let repository: ModuleGatewayProtocol
+//    private let router:
     
     init(repository: ModuleGatewayProtocol) {
         self.repository = repository
@@ -42,6 +44,10 @@ final class MainViewModel_ME: MainViewModelProtocol_ME {
             }
             
         }
+    }
+    
+    func didSelectItem(index: Int) {
+        
     }
     
     

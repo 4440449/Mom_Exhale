@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "94AB0CBC286A50C200742A33"
-               BuildableName = "Mom Exhale.app"
-               BlueprintName = "Mom Exhale"
-               ReferencedContainer = "container:Mom Exhale.xcodeproj">
+               BuildableName = "Mom_Exhale.app"
+               BlueprintName = "Mom_Exhale"
+               ReferencedContainer = "container:Mom_Exhale.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "94AB0CBC286A50C200742A33"
-            BuildableName = "Mom Exhale.app"
-            BlueprintName = "Mom Exhale"
-            ReferencedContainer = "container:Mom Exhale.xcodeproj">
+            BuildableName = "Mom_Exhale.app"
+            BlueprintName = "Mom_Exhale"
+            ReferencedContainer = "container:Mom_Exhale.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "94AB0CBC286A50C200742A33"
-            BuildableName = "Mom Exhale.app"
-            BlueprintName = "Mom Exhale"
-            ReferencedContainer = "container:Mom Exhale.xcodeproj">
+            BuildableName = "Mom_Exhale.app"
+            BlueprintName = "Mom_Exhale"
+            ReferencedContainer = "container:Mom_Exhale.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

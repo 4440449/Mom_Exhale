@@ -7,11 +7,15 @@
 
 import UIKit
 import SwiftUI
+import SPM_TEST
+
+
+//import Samoprikorm_SPM
 
 
 final class GlobalRouter_ME {
     
-    private func storyboard(name: String) -> UIViewController? {
+    private static func storyboard(name: String) -> UIViewController? {
          guard let _ = Bundle.main.path(forResource: name, ofType: "storyboardc") else { return nil }
          let stb = UIStoryboard(name: name, bundle: nil)
          guard let vc = stb.instantiateInitialViewController() else { return nil }
@@ -28,13 +32,12 @@ final class GlobalRouter_ME {
     }
     
     
-    func initVC(module: Module) -> UIViewController? {
+    static func initVC(module: Module) -> UIViewController? {
+        #if ROOT_APP
         switch module.keyName {
         case .BLW:
-// DI!!!
-//            let view = MainSceneConfigurator_SP.configure(store: storeGlobal, actionPool: actionPool)
-//            return UIHostingController(rootView: view)
-            return nil
+            let view = MainSceneConfigurator_SP.configure()
+            return UIHostingController(rootView: view)
         case .calmingNotifications:
             return nil
 //            let repositoryDIContainer = GatewaysRepositoryDIContainer_CN(
@@ -49,5 +52,9 @@ final class GlobalRouter_ME {
         case .babyTracker:
             return storyboard(name: module.keyName.rawValue)
         }
+        #else
+        return nil
+        
+        #endif
     }
 }
