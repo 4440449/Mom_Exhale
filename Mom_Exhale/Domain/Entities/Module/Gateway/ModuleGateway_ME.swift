@@ -6,7 +6,7 @@
 //
 
 
-protocol ModuleGatewayProtocol {
+protocol ModuleGateway_ME {
     
-    func fetch() async throws -> [Module]
+    func fetch() async throws -> [Module_ME]
 }

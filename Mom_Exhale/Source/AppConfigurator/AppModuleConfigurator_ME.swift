@@ -1,5 +1,5 @@
 //
-//  GlobalRouter_ME.swift
+//  AppModuleConfigurator_ME.swift
 //  Mom Exhale
 //
 //  Created by Maxim on 05.01.2022.
@@ -10,10 +10,12 @@ import SwiftUI
 import SPM_TEST
 
 
-//import Samoprikorm_SPM
+protocol AppModuleConfiguratorProtocol_ME {
+    static func configureModuleScene(by key: Module_ME.KeyName) -> UIViewController?
+}
 
 
-final class GlobalRouter_ME {
+struct AppModuleConfigurator_ME: AppModuleConfiguratorProtocol_ME {
     
     private static func storyboard(name: String) -> UIViewController? {
          guard let _ = Bundle.main.path(forResource: name, ofType: "storyboardc") else { return nil }
@@ -22,19 +24,10 @@ final class GlobalRouter_ME {
          return vc
      }
     
-    private func manual() -> UIViewController? {
-        return nil
-    }
-    
-    private func swiftUi() -> UIViewController? {
-//        return UIHostingController(rootView: view)
-        return nil
-    }
-    
-    
-    static func initVC(module: Module) -> UIViewController? {
+        
+    static func configureModuleScene(by key: Module_ME.KeyName) -> UIViewController? {
         #if ROOT_APP
-        switch module.keyName {
+        switch key {
         case .BLW:
             let view = MainSceneConfigurator_SP.configure()
             return UIHostingController(rootView: view)
@@ -50,7 +43,7 @@ final class GlobalRouter_ME {
 //           return = SplashSceneConfigurator_CN.configure(
 //                repositoryDIContainer: repositoryDIContainer )
         case .babyTracker:
-            return storyboard(name: module.keyName.rawValue)
+            return storyboard(name: key.rawValue)
         }
         #else
         return nil

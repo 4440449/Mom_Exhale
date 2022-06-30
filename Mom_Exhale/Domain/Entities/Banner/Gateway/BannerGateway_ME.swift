@@ -6,7 +6,7 @@
 //
 
 
-protocol BannerGatewayProtocol {
+protocol BannerGateway_ME {
     
     func fetch() async throws -> [Banner]
 }

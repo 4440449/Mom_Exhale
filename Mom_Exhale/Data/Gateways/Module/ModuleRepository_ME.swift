@@ -8,19 +8,40 @@
 import Foundation
 
 
-final class ModuleRepository_ME: ModuleGatewayProtocol {
+final class ModuleRepository_ME: ModuleGateway_ME {
     
-    func fetch() async throws -> [Module] {
-        let modules = [Module(id: UUID(),
-                              keyName: .BLW,
-                              title: "Самоприкорм"),
-                       Module(id: UUID(),
-                              keyName: .calmingNotifications,
-                              title: "Успокаивающие уведомления"),
-                       Module(id: UUID(),
-                              keyName: .babyTracker,
-                              title: "Трекер сна")]
-        return modules
+    // MARK: - Dependencies
+    
+    let network: ModuleNetworkRepositoryProtocol_ME
+    
+    
+    // MARK: - Init
+    
+    init(network: ModuleNetworkRepositoryProtocol_ME) {
+        self.network = network
+    }
+    
+    
+    // MARK: - Interface
+    
+    func fetch() async throws -> [Module_ME] {
+        let networkEntity = try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<[ModuleNetworkEntity_ME], Error>) -> Void in
+            let _ = self.network.fetch { result in
+                switch result {
+                case let .success(networkEntity):
+                    continuation.resume(returning: networkEntity)
+                case let .failure(networkError):
+                    continuation.resume(throwing: networkError)
+                }
+            }
+            sleep(2)
+        }
+        do {
+            let domain = try networkEntity.map { try $0.parseToDomain() }
+            return domain
+        } catch let dataError {
+            throw dataError
+        }
     }
     
 }

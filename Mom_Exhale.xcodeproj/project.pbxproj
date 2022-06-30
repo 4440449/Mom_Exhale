@@ -21,10 +21,9 @@
 		94AB0CEF286B476E00742A33 /* MainViewModel_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AB0CEE286B476E00742A33 /* MainViewModel_ME.swift */; };
 		94AB0CF2286B48FA00742A33 /* MainSceneConfigurator_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AB0CF1286B48FA00742A33 /* MainSceneConfigurator_ME.swift */; };
 		94AB0CF5286B49EA00742A33 /* ModuleRepository_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AB0CF4286B49EA00742A33 /* ModuleRepository_ME.swift */; };
-		94AB0CFA286B510500742A33 /* GatewaysRepositoryDIContainer_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AB0CF9286B510500742A33 /* GatewaysRepositoryDIContainer_ME.swift */; };
-		94AB0CFD286B696A00742A33 /* GlobalRouter_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AB0CFC286B696A00742A33 /* GlobalRouter_ME.swift */; };
+		94AB0CFD286B696A00742A33 /* AppModuleConfigurator_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AB0CFC286B696A00742A33 /* AppModuleConfigurator_ME.swift */; };
 		94AB0D01286C3F8400742A33 /* MainCollectionHeaderReusableView_MEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AB0CD8286A532800742A33 /* MainCollectionHeaderReusableView_MEx.swift */; };
-		94AB0D02286C3F8400742A33 /* GlobalRouter_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AB0CFC286B696A00742A33 /* GlobalRouter_ME.swift */; };
+		94AB0D02286C3F8400742A33 /* AppModuleConfigurator_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AB0CFC286B696A00742A33 /* AppModuleConfigurator_ME.swift */; };
 		94AB0D03286C3F8400742A33 /* Banner_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AB0CE4286B462800742A33 /* Banner_ME.swift */; };
 		94AB0D04286C3F8400742A33 /* Module_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AB0CDD286B457F00742A33 /* Module_ME.swift */; };
 		94AB0D05286C3F8400742A33 /* ModuleRepository_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AB0CF4286B49EA00742A33 /* ModuleRepository_ME.swift */; };
@@ -36,7 +35,6 @@
 		94AB0D0B286C3F8400742A33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AB0CC0286A50C200742A33 /* AppDelegate.swift */; };
 		94AB0D0C286C3F8400742A33 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AB0CC2286A50C200742A33 /* SceneDelegate.swift */; };
 		94AB0D0D286C3F8400742A33 /* MainCollectionViewCell_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AB0CD5286A527800742A33 /* MainCollectionViewCell_ME.swift */; };
-		94AB0D0E286C3F8400742A33 /* GatewaysRepositoryDIContainer_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AB0CF9286B510500742A33 /* GatewaysRepositoryDIContainer_ME.swift */; };
 		94AB0D11286C3F8400742A33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94AB0CCB286A50C300742A33 /* LaunchScreen.storyboard */; };
 		94AB0D12286C3F8400742A33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94AB0CC9286A50C300742A33 /* Assets.xcassets */; };
 		94B0D173286C79910006899B /* MommysEye in Frameworks */ = {isa = PBXBuildFile; productRef = 94B0D172286C79910006899B /* MommysEye */; };
@@ -49,6 +47,18 @@
 		94B0D197286C9F4C0006899B /* Montserrat-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 94B0D192286C9F4C0006899B /* Montserrat-ExtraBold.ttf */; };
 		94B0D198286C9F4C0006899B /* Montserrat-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 94B0D193286C9F4C0006899B /* Montserrat-Thin.ttf */; };
 		94B0D199286C9F4C0006899B /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 94B0D194286C9F4C0006899B /* Montserrat-Bold.ttf */; };
+		94B0D19B286CAEB80006899B /* MainRouter_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B0D19A286CAEB80006899B /* MainRouter_ME.swift */; };
+		94B0D19C286CAEB80006899B /* MainRouter_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B0D19A286CAEB80006899B /* MainRouter_ME.swift */; };
+		94B0D19F286DAE660006899B /* SceneConfigurator_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B0D19E286DAE660006899B /* SceneConfigurator_ME.swift */; };
+		94B0D1A0286DAE660006899B /* SceneConfigurator_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B0D19E286DAE660006899B /* SceneConfigurator_ME.swift */; };
+		94B0D1A5286DAFDB0006899B /* GatewaysRepositoryDIContainer_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B0D1A4286DAFDB0006899B /* GatewaysRepositoryDIContainer_ME.swift */; };
+		94B0D1A6286DAFDB0006899B /* GatewaysRepositoryDIContainer_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B0D1A4286DAFDB0006899B /* GatewaysRepositoryDIContainer_ME.swift */; };
+		94B0D1A9286DB2250006899B /* BannerRepository_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B0D1A8286DB2250006899B /* BannerRepository_ME.swift */; };
+		94B0D1AA286DB2250006899B /* BannerRepository_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B0D1A8286DB2250006899B /* BannerRepository_ME.swift */; };
+		94B0D1AD286DC20E0006899B /* ModuleNetworkRepository_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B0D1AC286DC20E0006899B /* ModuleNetworkRepository_ME.swift */; };
+		94B0D1AE286DC20E0006899B /* ModuleNetworkRepository_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B0D1AC286DC20E0006899B /* ModuleNetworkRepository_ME.swift */; };
+		94B0D1B1286DC2700006899B /* ModuleNetworkEntity_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B0D1B0286DC2700006899B /* ModuleNetworkEntity_ME.swift */; };
+		94B0D1B2286DC2700006899B /* ModuleNetworkEntity_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B0D1B0286DC2700006899B /* ModuleNetworkEntity_ME.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,8 +78,7 @@
 		94AB0CEE286B476E00742A33 /* MainViewModel_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel_ME.swift; sourceTree = "<group>"; };
 		94AB0CF1286B48FA00742A33 /* MainSceneConfigurator_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSceneConfigurator_ME.swift; sourceTree = "<group>"; };
 		94AB0CF4286B49EA00742A33 /* ModuleRepository_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleRepository_ME.swift; sourceTree = "<group>"; };
-		94AB0CF9286B510500742A33 /* GatewaysRepositoryDIContainer_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewaysRepositoryDIContainer_ME.swift; sourceTree = "<group>"; };
-		94AB0CFC286B696A00742A33 /* GlobalRouter_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalRouter_ME.swift; sourceTree = "<group>"; };
+		94AB0CFC286B696A00742A33 /* AppModuleConfigurator_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModuleConfigurator_ME.swift; sourceTree = "<group>"; };
 		94AB0D16286C3F8400742A33 /* Mom_Exhale Root App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mom_Exhale Root App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94AB0D17286C3F8400742A33 /* Mom_Exhale Root App Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Mom_Exhale Root App Info.plist"; sourceTree = "<group>"; };
 		94B0D190286C9F4C0006899B /* Montserrat-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Black.ttf"; sourceTree = "<group>"; };
@@ -77,6 +86,12 @@
 		94B0D192286C9F4C0006899B /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.ttf"; sourceTree = "<group>"; };
 		94B0D193286C9F4C0006899B /* Montserrat-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Thin.ttf"; sourceTree = "<group>"; };
 		94B0D194286C9F4C0006899B /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		94B0D19A286CAEB80006899B /* MainRouter_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter_ME.swift; sourceTree = "<group>"; };
+		94B0D19E286DAE660006899B /* SceneConfigurator_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneConfigurator_ME.swift; sourceTree = "<group>"; };
+		94B0D1A4286DAFDB0006899B /* GatewaysRepositoryDIContainer_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewaysRepositoryDIContainer_ME.swift; sourceTree = "<group>"; };
+		94B0D1A8286DB2250006899B /* BannerRepository_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerRepository_ME.swift; sourceTree = "<group>"; };
+		94B0D1AC286DC20E0006899B /* ModuleNetworkRepository_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleNetworkRepository_ME.swift; sourceTree = "<group>"; };
+		94B0D1B0286DC2700006899B /* ModuleNetworkEntity_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleNetworkEntity_ME.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,9 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				94AB0CBF286A50C200742A33 /* Mom_Exhale */,
-				94AB0D17286C3F8400742A33 /* Mom_Exhale Root App Info.plist */,
 				94AB0CBE286A50C200742A33 /* Products */,
-				94B0D16E286C67F30006899B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,14 +141,9 @@
 				94AB0CE1286B45A400742A33 /* Domain */,
 				94AB0CF8286B4B7800742A33 /* Data */,
 				94AB0CDB286B44B400742A33 /* Presentation */,
-				94AB0CC9286A50C300742A33 /* Assets.xcassets */,
-				94B0D190286C9F4C0006899B /* Montserrat-Black.ttf */,
-				94B0D194286C9F4C0006899B /* Montserrat-Bold.ttf */,
-				94B0D192286C9F4C0006899B /* Montserrat-ExtraBold.ttf */,
-				94B0D191286C9F4C0006899B /* Montserrat-Regular.ttf */,
-				94B0D193286C9F4C0006899B /* Montserrat-Thin.ttf */,
-				94AB0CCB286A50C300742A33 /* LaunchScreen.storyboard */,
+				94B0D1A3286DAF290006899B /* Other */,
 				94AB0CCE286A50C300742A33 /* Info.plist */,
+				94AB0D17286C3F8400742A33 /* Mom_Exhale Root App Info.plist */,
 			);
 			path = Mom_Exhale;
 			sourceTree = "<group>";
@@ -170,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				94AB0CEC286B475000742A33 /* Scenes */,
+				94B0D1A2286DAE760006899B /* Tools */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -179,7 +188,7 @@
 			children = (
 				94AB0CC0286A50C200742A33 /* AppDelegate.swift */,
 				94AB0CC2286A50C200742A33 /* SceneDelegate.swift */,
-				94AB0CFE286C3C1C00742A33 /* Router */,
+				94AB0CFE286C3C1C00742A33 /* AppConfigurator */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -249,6 +258,7 @@
 				94AB0CF3286B49A500742A33 /* Configurator */,
 				94AB0CD4286A511500742A33 /* View */,
 				94AB0CF0286B477500742A33 /* ViewModel */,
+				94B0D19D286CAEBF0006899B /* Router */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -273,6 +283,7 @@
 			isa = PBXGroup;
 			children = (
 				94AB0CF4286B49EA00742A33 /* ModuleRepository_ME.swift */,
+				94B0D1AF286DC2400006899B /* Network */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -281,6 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				94AB0CF6286B4B5900742A33 /* Module */,
+				94B0D1AB286DB2490006899B /* Banner */,
 			);
 			path = Gateways;
 			sourceTree = "<group>";
@@ -297,24 +309,80 @@
 		94AB0CFB286B510A00742A33 /* Configurator */ = {
 			isa = PBXGroup;
 			children = (
-				94AB0CF9286B510500742A33 /* GatewaysRepositoryDIContainer_ME.swift */,
+				94B0D1A4286DAFDB0006899B /* GatewaysRepositoryDIContainer_ME.swift */,
 			);
 			path = Configurator;
 			sourceTree = "<group>";
 		};
-		94AB0CFE286C3C1C00742A33 /* Router */ = {
+		94AB0CFE286C3C1C00742A33 /* AppConfigurator */ = {
 			isa = PBXGroup;
 			children = (
-				94AB0CFC286B696A00742A33 /* GlobalRouter_ME.swift */,
+				94AB0CFC286B696A00742A33 /* AppModuleConfigurator_ME.swift */,
+			);
+			path = AppConfigurator;
+			sourceTree = "<group>";
+		};
+		94B0D19D286CAEBF0006899B /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				94B0D19A286CAEB80006899B /* MainRouter_ME.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
 		};
-		94B0D16E286C67F30006899B /* Frameworks */ = {
+		94B0D1A1286DAE6B0006899B /* Configurator */ = {
 			isa = PBXGroup;
 			children = (
+				94B0D19E286DAE660006899B /* SceneConfigurator_ME.swift */,
 			);
-			name = Frameworks;
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		94B0D1A2286DAE760006899B /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				94B0D1A1286DAE6B0006899B /* Configurator */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		94B0D1A3286DAF290006899B /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				94AB0CC9286A50C300742A33 /* Assets.xcassets */,
+				94B0D190286C9F4C0006899B /* Montserrat-Black.ttf */,
+				94B0D194286C9F4C0006899B /* Montserrat-Bold.ttf */,
+				94B0D192286C9F4C0006899B /* Montserrat-ExtraBold.ttf */,
+				94B0D191286C9F4C0006899B /* Montserrat-Regular.ttf */,
+				94B0D193286C9F4C0006899B /* Montserrat-Thin.ttf */,
+				94AB0CCB286A50C300742A33 /* LaunchScreen.storyboard */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		94B0D1AB286DB2490006899B /* Banner */ = {
+			isa = PBXGroup;
+			children = (
+				94B0D1A8286DB2250006899B /* BannerRepository_ME.swift */,
+			);
+			path = Banner;
+			sourceTree = "<group>";
+		};
+		94B0D1AF286DC2400006899B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				94B0D1AC286DC20E0006899B /* ModuleNetworkRepository_ME.swift */,
+				94B0D1B3286DC2740006899B /* Entity */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		94B0D1B3286DC2740006899B /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				94B0D1B0286DC2700006899B /* ModuleNetworkEntity_ME.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -434,19 +502,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				94AB0CD9286A532800742A33 /* MainCollectionHeaderReusableView_MEx.swift in Sources */,
-				94AB0CFD286B696A00742A33 /* GlobalRouter_ME.swift in Sources */,
+				94AB0CFD286B696A00742A33 /* AppModuleConfigurator_ME.swift in Sources */,
 				94AB0CE5286B462800742A33 /* Banner_ME.swift in Sources */,
+				94B0D19B286CAEB80006899B /* MainRouter_ME.swift in Sources */,
 				94AB0CDE286B457F00742A33 /* Module_ME.swift in Sources */,
 				94AB0CF5286B49EA00742A33 /* ModuleRepository_ME.swift in Sources */,
 				94AB0CE3286B45BB00742A33 /* ModuleGateway_ME.swift in Sources */,
+				94B0D19F286DAE660006899B /* SceneConfigurator_ME.swift in Sources */,
 				94AB0CC5286A50C200742A33 /* MainViewController_ME.swift in Sources */,
 				94AB0CEF286B476E00742A33 /* MainViewModel_ME.swift in Sources */,
 				94AB0CE8286B465700742A33 /* BannerGateway_ME.swift in Sources */,
 				94AB0CF2286B48FA00742A33 /* MainSceneConfigurator_ME.swift in Sources */,
+				94B0D1B1286DC2700006899B /* ModuleNetworkEntity_ME.swift in Sources */,
 				94AB0CC1286A50C200742A33 /* AppDelegate.swift in Sources */,
 				94AB0CC3286A50C200742A33 /* SceneDelegate.swift in Sources */,
 				94AB0CD6286A527800742A33 /* MainCollectionViewCell_ME.swift in Sources */,
-				94AB0CFA286B510500742A33 /* GatewaysRepositoryDIContainer_ME.swift in Sources */,
+				94B0D1A5286DAFDB0006899B /* GatewaysRepositoryDIContainer_ME.swift in Sources */,
+				94B0D1AD286DC20E0006899B /* ModuleNetworkRepository_ME.swift in Sources */,
+				94B0D1A9286DB2250006899B /* BannerRepository_ME.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,19 +528,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				94AB0D01286C3F8400742A33 /* MainCollectionHeaderReusableView_MEx.swift in Sources */,
-				94AB0D02286C3F8400742A33 /* GlobalRouter_ME.swift in Sources */,
+				94AB0D02286C3F8400742A33 /* AppModuleConfigurator_ME.swift in Sources */,
 				94AB0D03286C3F8400742A33 /* Banner_ME.swift in Sources */,
+				94B0D19C286CAEB80006899B /* MainRouter_ME.swift in Sources */,
 				94AB0D04286C3F8400742A33 /* Module_ME.swift in Sources */,
 				94AB0D05286C3F8400742A33 /* ModuleRepository_ME.swift in Sources */,
 				94AB0D06286C3F8400742A33 /* ModuleGateway_ME.swift in Sources */,
+				94B0D1A0286DAE660006899B /* SceneConfigurator_ME.swift in Sources */,
 				94AB0D07286C3F8400742A33 /* MainViewController_ME.swift in Sources */,
 				94AB0D08286C3F8400742A33 /* MainViewModel_ME.swift in Sources */,
 				94AB0D09286C3F8400742A33 /* BannerGateway_ME.swift in Sources */,
 				94AB0D0A286C3F8400742A33 /* MainSceneConfigurator_ME.swift in Sources */,
+				94B0D1B2286DC2700006899B /* ModuleNetworkEntity_ME.swift in Sources */,
 				94AB0D0B286C3F8400742A33 /* AppDelegate.swift in Sources */,
 				94AB0D0C286C3F8400742A33 /* SceneDelegate.swift in Sources */,
 				94AB0D0D286C3F8400742A33 /* MainCollectionViewCell_ME.swift in Sources */,
-				94AB0D0E286C3F8400742A33 /* GatewaysRepositoryDIContainer_ME.swift in Sources */,
+				94B0D1A6286DAFDB0006899B /* GatewaysRepositoryDIContainer_ME.swift in Sources */,
+				94B0D1AE286DC20E0006899B /* ModuleNetworkRepository_ME.swift in Sources */,
+				94B0D1AA286DB2250006899B /* BannerRepository_ME.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

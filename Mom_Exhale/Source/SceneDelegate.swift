@@ -16,8 +16,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-        let mainVC = MainSceneConfigurator_ME.configure()
-//        let navigationVC = UINavigationController(rootViewController: mainVC)
+        let repositoryDIContainer = GatewaysRepositoryDIContainer_ME()
+        let mainVC = MainSceneConfigurator_ME.configure(repositoryDIContainer: repositoryDIContainer)
         window?.rootViewController = mainVC
         window?.makeKeyAndVisible()
     }

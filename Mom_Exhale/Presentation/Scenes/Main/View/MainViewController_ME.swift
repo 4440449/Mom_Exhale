@@ -38,8 +38,19 @@ class MainViewController_ME: UIViewController,
         super.viewDidLoad()
         view.addSubview(collection)
         initialUISetup()
+        setupObservers()
         viewModel.loadInitialState()
+        
     }
+    
+    // MARK: - Subscribe
+    
+    func setupObservers() {
+        viewModel.modules.subscribe(observer: self) { [weak self] modules in
+            self?.collection.reloadData()
+        }
+    }
+
     
     
     // MARK: - Property
@@ -103,14 +114,14 @@ class MainViewController_ME: UIViewController,
     // MARK: - Collection Data source
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return viewModel.modules.value.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainCollectionViewCell_ME.identifier, for: indexPath) as? MainCollectionViewCell_ME else {
             fatalError()
         }
-        let text = viewModel.tmpModules[indexPath.row].title
+        let text = viewModel.modules.value[indexPath.row].title
         cell.setupTextLabel(text: text)
         return cell
     }
@@ -130,22 +141,7 @@ class MainViewController_ME: UIViewController,
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("didSelectItemAt")
-        if indexPath.row == 0 {
-            if let vc = GlobalRouter_ME.initVC(module: .init(id: UUID(),
-                                                 keyName: .BLW,
-                                                             title: "")) {
-            vc.modalPresentationStyle = .overFullScreen
-            self.present(vc, animated: true, completion: nil)
-            }
-        }
-        
-//        viewModel.didSelectItem(index: indexPath.row)
-//        if indexPath.row == 0 {
-//            if let vc = GlobalRouter_ME.initVC(module: .init(id: UUID(), keyName: .BLW, title: "")) {
-//                vc.modalPresentationStyle = .overFullScreen
-//                self.present(vc, animated: true, completion: nil)
-//            }
-//        }
+        viewModel.didSelectItem(index: indexPath.row)
     }
     
     

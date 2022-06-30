@@ -8,16 +8,19 @@
 import Foundation
 import UIKit
 
-protocol SceneConfiguratorProtocol_CN { }
 
 
-final class MainSceneConfigurator_ME: SceneConfiguratorProtocol_CN {
+final class MainSceneConfigurator_ME: SceneConfiguratorProtocol_ME {
     
-    static func configure() -> UIViewController {
-        let repository = GatewaysRepositoryDIContainer_ME.createModuleRepository()
-        let viewModel = MainViewModel_ME(repository: repository)
+    static func configure(repositoryDIContainer: GatewaysRepositoryDIContainerProtocol_ME) -> UIViewController {
+        let moduleRepository = repositoryDIContainer.module
+        let router = MainRouter_ME(navigationContainer: nil,
+                                   repositoryDIContainer: repositoryDIContainer)
+        let viewModel = MainViewModel_ME(repository: moduleRepository,
+                                         router: router)
         let vc = MainViewController_ME(viewModel: viewModel)
         let navigationVC = UINavigationController(rootViewController: vc)
+        router.navigationContainer = navigationVC
         return navigationVC
     }
 }

@@ -5,10 +5,11 @@
 //  Created by Maxim on 31.12.2021.
 //
 
-import Foundation
+import MommysEye
+
 
 protocol MainViewModelProtocol_ME {
-    var tmpModules: [Module] { get }
+    var modules: Publisher<[Module_ME]> { get }
     func loadInitialState()
     func didSelectItem(index: Int)
 }
@@ -17,28 +18,23 @@ protocol MainViewModelProtocol_ME {
 
 final class MainViewModel_ME: MainViewModelProtocol_ME {
     
-    private let repository: ModuleGatewayProtocol
-//    private let router:
+    private let repository: ModuleGateway_ME
+    private let router: MainRouterProtocol_ME
     
-    init(repository: ModuleGatewayProtocol) {
+    init(repository: ModuleGateway_ME,
+         router: MainRouterProtocol_ME) {
         self.repository = repository
+        self.router = router
     }
     
     
-    var tmpModules: [Module] = [Module(id: UUID(),
-                                       keyName: .BLW,
-                                       title: "Самоприкорм"),
-                                Module(id: UUID(),
-                                       keyName: .calmingNotifications,
-                                       title: "Успокаивающие уведомления"),
-                                Module(id: UUID(),
-                                       keyName: .babyTracker,
-                                       title: "Трекер сна")]
+    var modules = Publisher(value: [Module_ME]())
     
     func loadInitialState() {
         let _ = Task {
             do {
-                tmpModules = try await repository.fetch()
+                let result = try await self.repository.fetch()
+                modules.value = result
             } catch let domainError {
                 print(domainError)
             }
@@ -47,7 +43,8 @@ final class MainViewModel_ME: MainViewModelProtocol_ME {
     }
     
     func didSelectItem(index: Int) {
-        
+        let key = modules.value[index].keyName
+        router.showModule(by: key)
     }
     
     

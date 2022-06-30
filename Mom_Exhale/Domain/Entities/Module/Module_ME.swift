@@ -11,13 +11,13 @@ import Foundation
 import Foundation
 
 
-struct Module {
+struct Module_ME {
     let id: UUID
     let keyName: KeyName
     let title: String
     
     enum KeyName: String {
-        case BLW = "Самоприкорм"
+        case BLW = "Samoprikorm"
         case calmingNotifications = "CalmingNotifications"
         case babyTracker = "BabyTrackerWW"
     }
