@@ -11,18 +11,20 @@ class MainViewController_ME: UIViewController,
                              UICollectionViewDelegate,
                              UICollectionViewDataSource {
     
-    
     // MARK: - Dependencies
-
+    
     private let viewModel: MainViewModelProtocol_ME
+    private let headerConfigurator: MainHeaderConfiguratorProtocol_ME
     
     
     // MARK: - Init
-
+    
     init(viewModel: MainViewModelProtocol_ME,
+         headerConfigurator: MainHeaderConfiguratorProtocol_ME,
          nibName: String? = nil,
          bundle: Bundle? = nil) {
         self.viewModel = viewModel
+        self.headerConfigurator = headerConfigurator
         super.init(nibName: nibName,
                    bundle: bundle)
     }
@@ -37,11 +39,13 @@ class MainViewController_ME: UIViewController,
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(collection)
+        view.addSubview(activity)
         initialUISetup()
         setupObservers()
         viewModel.loadInitialState()
         
     }
+    
     
     // MARK: - Subscribe
     
@@ -49,11 +53,24 @@ class MainViewController_ME: UIViewController,
         viewModel.modules.subscribe(observer: self) { [weak self] modules in
             self?.collection.reloadData()
         }
+        
+        viewModel.isLoading.subscribe(observer: self) { [weak self] isLoading in
+            isLoading ? self?.activity.startAnimating() : self?.activity.stopAnimating()
+        }
     }
-
     
     
     // MARK: - Property
+    
+    private lazy var activity: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView()
+        indicator.center = CGPoint(x: collection.bounds.midX,
+                                   y: collection.bounds.midY * 1.3)
+        indicator.hidesWhenStopped = true
+        indicator.style = .large
+        indicator.color = .systemGray
+        return indicator
+    }()
     
     private lazy var userNavBarButton: UIBarButtonItem = {
         let button = UIBarButtonItem(image: UIImage(systemName: "person.fill"),
@@ -67,15 +84,17 @@ class MainViewController_ME: UIViewController,
     @objc private func userButtonTapped() {
         print(userButtonTapped)
     }
-
+    
     private lazy var collection: UICollectionView = {
         let collection = UICollectionView(frame: view.bounds,
                                           collectionViewLayout: setupCollectionViewLayout())
         collection.register(MainCollectionViewCell_ME.self,
                             forCellWithReuseIdentifier: MainCollectionViewCell_ME.identifier)
-        collection.register(MainCollectionHeaderReusableView_MEx.self,
+        collection.register(MainCollectionHeaderReusableView_ME.self,
+                            //            type(of: header),
                             forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-                            withReuseIdentifier: MainCollectionHeaderReusableView_MEx.identifier)
+                            withReuseIdentifier: MainCollectionHeaderReusableView_ME.identifier)
+        //                                (type(of: header).identifier))
         collection.contentInset.top = 20
         collection.alwaysBounceVertical = true
         collection.backgroundColor = UIColor(named: "background")
@@ -129,16 +148,18 @@ class MainViewController_ME: UIViewController,
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         guard let header = collectionView.dequeueReusableSupplementaryView(
             ofKind: UICollectionView.elementKindSectionHeader,
-            withReuseIdentifier: MainCollectionHeaderReusableView_MEx.identifier,
-            for: indexPath) as? MainCollectionHeaderReusableView_MEx else {
+            withReuseIdentifier: MainCollectionHeaderReusableView_ME.identifier,
+            for: indexPath) as? MainCollectionHeaderReusableView_ME else {
                 fatalError()
             }
+        headerConfigurator.configure(header)
+        header.viewDidLoad()
         return header
     }
-
+    
     
     // MARK: - Collection Delegate
-
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("didSelectItemAt")
         viewModel.didSelectItem(index: indexPath.row)

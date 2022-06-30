@@ -13,7 +13,7 @@
 		94AB0CCA286A50C300742A33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94AB0CC9286A50C300742A33 /* Assets.xcassets */; };
 		94AB0CCD286A50C300742A33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94AB0CCB286A50C300742A33 /* LaunchScreen.storyboard */; };
 		94AB0CD6286A527800742A33 /* MainCollectionViewCell_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AB0CD5286A527800742A33 /* MainCollectionViewCell_ME.swift */; };
-		94AB0CD9286A532800742A33 /* MainCollectionHeaderReusableView_MEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AB0CD8286A532800742A33 /* MainCollectionHeaderReusableView_MEx.swift */; };
+		94AB0CD9286A532800742A33 /* MainCollectionHeaderReusableView_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AB0CD8286A532800742A33 /* MainCollectionHeaderReusableView_ME.swift */; };
 		94AB0CDE286B457F00742A33 /* Module_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AB0CDD286B457F00742A33 /* Module_ME.swift */; };
 		94AB0CE3286B45BB00742A33 /* ModuleGateway_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AB0CE2286B45BB00742A33 /* ModuleGateway_ME.swift */; };
 		94AB0CE5286B462800742A33 /* Banner_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AB0CE4286B462800742A33 /* Banner_ME.swift */; };
@@ -22,7 +22,7 @@
 		94AB0CF2286B48FA00742A33 /* MainSceneConfigurator_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AB0CF1286B48FA00742A33 /* MainSceneConfigurator_ME.swift */; };
 		94AB0CF5286B49EA00742A33 /* ModuleRepository_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AB0CF4286B49EA00742A33 /* ModuleRepository_ME.swift */; };
 		94AB0CFD286B696A00742A33 /* AppModuleConfigurator_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AB0CFC286B696A00742A33 /* AppModuleConfigurator_ME.swift */; };
-		94AB0D01286C3F8400742A33 /* MainCollectionHeaderReusableView_MEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AB0CD8286A532800742A33 /* MainCollectionHeaderReusableView_MEx.swift */; };
+		94AB0D01286C3F8400742A33 /* MainCollectionHeaderReusableView_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AB0CD8286A532800742A33 /* MainCollectionHeaderReusableView_ME.swift */; };
 		94AB0D02286C3F8400742A33 /* AppModuleConfigurator_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AB0CFC286B696A00742A33 /* AppModuleConfigurator_ME.swift */; };
 		94AB0D03286C3F8400742A33 /* Banner_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AB0CE4286B462800742A33 /* Banner_ME.swift */; };
 		94AB0D04286C3F8400742A33 /* Module_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AB0CDD286B457F00742A33 /* Module_ME.swift */; };
@@ -59,6 +59,14 @@
 		94B0D1AE286DC20E0006899B /* ModuleNetworkRepository_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B0D1AC286DC20E0006899B /* ModuleNetworkRepository_ME.swift */; };
 		94B0D1B1286DC2700006899B /* ModuleNetworkEntity_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B0D1B0286DC2700006899B /* ModuleNetworkEntity_ME.swift */; };
 		94B0D1B2286DC2700006899B /* ModuleNetworkEntity_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B0D1B0286DC2700006899B /* ModuleNetworkEntity_ME.swift */; };
+		94B0D1B5286E2AFC0006899B /* MainHeaderViewModel_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B0D1B4286E2AFC0006899B /* MainHeaderViewModel_ME.swift */; };
+		94B0D1B6286E2AFC0006899B /* MainHeaderViewModel_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B0D1B4286E2AFC0006899B /* MainHeaderViewModel_ME.swift */; };
+		94B0D1B9286E3EA20006899B /* MainHeaderConfigurator_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B0D1B8286E3EA20006899B /* MainHeaderConfigurator_ME.swift */; };
+		94B0D1BA286E3EA20006899B /* MainHeaderConfigurator_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B0D1B8286E3EA20006899B /* MainHeaderConfigurator_ME.swift */; };
+		94B0D1BE286E43980006899B /* BannerNetworkRepository_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B0D1BD286E43980006899B /* BannerNetworkRepository_ME.swift */; };
+		94B0D1BF286E43980006899B /* BannerNetworkRepository_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B0D1BD286E43980006899B /* BannerNetworkRepository_ME.swift */; };
+		94B0D1C2286E44320006899B /* BannerNetworkEntity_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B0D1C1286E44320006899B /* BannerNetworkEntity_ME.swift */; };
+		94B0D1C3286E44320006899B /* BannerNetworkEntity_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B0D1C1286E44320006899B /* BannerNetworkEntity_ME.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,7 +78,7 @@
 		94AB0CCC286A50C300742A33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		94AB0CCE286A50C300742A33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94AB0CD5286A527800742A33 /* MainCollectionViewCell_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell_ME.swift; sourceTree = "<group>"; };
-		94AB0CD8286A532800742A33 /* MainCollectionHeaderReusableView_MEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionHeaderReusableView_MEx.swift; sourceTree = "<group>"; };
+		94AB0CD8286A532800742A33 /* MainCollectionHeaderReusableView_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionHeaderReusableView_ME.swift; sourceTree = "<group>"; };
 		94AB0CDD286B457F00742A33 /* Module_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Module_ME.swift; sourceTree = "<group>"; };
 		94AB0CE2286B45BB00742A33 /* ModuleGateway_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleGateway_ME.swift; sourceTree = "<group>"; };
 		94AB0CE4286B462800742A33 /* Banner_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner_ME.swift; sourceTree = "<group>"; };
@@ -92,6 +100,10 @@
 		94B0D1A8286DB2250006899B /* BannerRepository_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerRepository_ME.swift; sourceTree = "<group>"; };
 		94B0D1AC286DC20E0006899B /* ModuleNetworkRepository_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleNetworkRepository_ME.swift; sourceTree = "<group>"; };
 		94B0D1B0286DC2700006899B /* ModuleNetworkEntity_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleNetworkEntity_ME.swift; sourceTree = "<group>"; };
+		94B0D1B4286E2AFC0006899B /* MainHeaderViewModel_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHeaderViewModel_ME.swift; sourceTree = "<group>"; };
+		94B0D1B8286E3EA20006899B /* MainHeaderConfigurator_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHeaderConfigurator_ME.swift; sourceTree = "<group>"; };
+		94B0D1BD286E43980006899B /* BannerNetworkRepository_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerNetworkRepository_ME.swift; sourceTree = "<group>"; };
+		94B0D1C1286E44320006899B /* BannerNetworkEntity_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerNetworkEntity_ME.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				94AB0CBF286A50C200742A33 /* Mom_Exhale */,
+				94AB0D17286C3F8400742A33 /* Mom_Exhale Root App Info.plist */,
 				94AB0CBE286A50C200742A33 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -143,7 +156,6 @@
 				94AB0CDB286B44B400742A33 /* Presentation */,
 				94B0D1A3286DAF290006899B /* Other */,
 				94AB0CCE286A50C300742A33 /* Info.plist */,
-				94AB0D17286C3F8400742A33 /* Mom_Exhale Root App Info.plist */,
 			);
 			path = Mom_Exhale;
 			sourceTree = "<group>";
@@ -169,7 +181,9 @@
 		94AB0CDA286A535700742A33 /* Header */ = {
 			isa = PBXGroup;
 			children = (
-				94AB0CD8286A532800742A33 /* MainCollectionHeaderReusableView_MEx.swift */,
+				94B0D1BB286E3EA50006899B /* Configurator */,
+				94B0D1BC286E42720006899B /* View */,
+				94B0D1B7286E2B000006899B /* ViewModel */,
 			);
 			path = Header;
 			sourceTree = "<group>";
@@ -364,6 +378,7 @@
 			isa = PBXGroup;
 			children = (
 				94B0D1A8286DB2250006899B /* BannerRepository_ME.swift */,
+				94B0D1C0286E439B0006899B /* Network */,
 			);
 			path = Banner;
 			sourceTree = "<group>";
@@ -381,6 +396,47 @@
 			isa = PBXGroup;
 			children = (
 				94B0D1B0286DC2700006899B /* ModuleNetworkEntity_ME.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		94B0D1B7286E2B000006899B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				94B0D1B4286E2AFC0006899B /* MainHeaderViewModel_ME.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		94B0D1BB286E3EA50006899B /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				94B0D1B8286E3EA20006899B /* MainHeaderConfigurator_ME.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		94B0D1BC286E42720006899B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				94AB0CD8286A532800742A33 /* MainCollectionHeaderReusableView_ME.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		94B0D1C0286E439B0006899B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				94B0D1BD286E43980006899B /* BannerNetworkRepository_ME.swift */,
+				94B0D1C4286E44370006899B /* Entity */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		94B0D1C4286E44370006899B /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				94B0D1C1286E44320006899B /* BannerNetworkEntity_ME.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -501,12 +557,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94AB0CD9286A532800742A33 /* MainCollectionHeaderReusableView_MEx.swift in Sources */,
+				94B0D1C2286E44320006899B /* BannerNetworkEntity_ME.swift in Sources */,
+				94B0D1BE286E43980006899B /* BannerNetworkRepository_ME.swift in Sources */,
+				94AB0CD9286A532800742A33 /* MainCollectionHeaderReusableView_ME.swift in Sources */,
+				94B0D1B9286E3EA20006899B /* MainHeaderConfigurator_ME.swift in Sources */,
 				94AB0CFD286B696A00742A33 /* AppModuleConfigurator_ME.swift in Sources */,
 				94AB0CE5286B462800742A33 /* Banner_ME.swift in Sources */,
 				94B0D19B286CAEB80006899B /* MainRouter_ME.swift in Sources */,
 				94AB0CDE286B457F00742A33 /* Module_ME.swift in Sources */,
 				94AB0CF5286B49EA00742A33 /* ModuleRepository_ME.swift in Sources */,
+				94B0D1B5286E2AFC0006899B /* MainHeaderViewModel_ME.swift in Sources */,
 				94AB0CE3286B45BB00742A33 /* ModuleGateway_ME.swift in Sources */,
 				94B0D19F286DAE660006899B /* SceneConfigurator_ME.swift in Sources */,
 				94AB0CC5286A50C200742A33 /* MainViewController_ME.swift in Sources */,
@@ -527,12 +587,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94AB0D01286C3F8400742A33 /* MainCollectionHeaderReusableView_MEx.swift in Sources */,
+				94B0D1C3286E44320006899B /* BannerNetworkEntity_ME.swift in Sources */,
+				94B0D1BF286E43980006899B /* BannerNetworkRepository_ME.swift in Sources */,
+				94AB0D01286C3F8400742A33 /* MainCollectionHeaderReusableView_ME.swift in Sources */,
+				94B0D1BA286E3EA20006899B /* MainHeaderConfigurator_ME.swift in Sources */,
 				94AB0D02286C3F8400742A33 /* AppModuleConfigurator_ME.swift in Sources */,
 				94AB0D03286C3F8400742A33 /* Banner_ME.swift in Sources */,
 				94B0D19C286CAEB80006899B /* MainRouter_ME.swift in Sources */,
 				94AB0D04286C3F8400742A33 /* Module_ME.swift in Sources */,
 				94AB0D05286C3F8400742A33 /* ModuleRepository_ME.swift in Sources */,
+				94B0D1B6286E2AFC0006899B /* MainHeaderViewModel_ME.swift in Sources */,
 				94AB0D06286C3F8400742A33 /* ModuleGateway_ME.swift in Sources */,
 				94B0D1A0286DAE660006899B /* SceneConfigurator_ME.swift in Sources */,
 				94AB0D07286C3F8400742A33 /* MainViewController_ME.swift in Sources */,

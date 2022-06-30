@@ -45,7 +45,11 @@ final class GatewaysRepositoryDIContainer_ME: GatewaysRepositoryDIContainerProto
     }
     
     static func createBannerRepository() -> BannerGateway_ME {
-        let repository = BannerRepository_ME()
+        let client = BabyNetRepository()
+        let apiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNydXZtZ3V1YWRyaWt4amdscml3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NTQ3ODgyMzgsImV4cCI6MTk3MDM2NDIzOH0.udc8nAU84lOWCgJChCCq815w0oBoXh6zrceObzg8Z1Q"
+        let network = BannerNetworkRepository_ME(client: client,
+                                                 apiKey: apiKey)
+        let repository = BannerRepository_ME(network: network)
         return repository
     }
     

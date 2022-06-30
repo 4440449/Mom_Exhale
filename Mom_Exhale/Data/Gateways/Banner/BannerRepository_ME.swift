@@ -10,9 +10,34 @@ import Foundation
 
 final class BannerRepository_ME: BannerGateway_ME {
     
-    func fetch() async throws -> [Banner] {
-        return []
+    // MARK: - Dependencies
+    
+    let network: BannerNetworkRepositoryProtocol_ME
+    
+    
+    // MARK: - Init
+    
+    init(network: BannerNetworkRepositoryProtocol_ME) {
+        self.network = network
     }
     
+    
+    // MARK: - Interface
+    
+    func fetch() async throws -> [Banner_ME] {
+        let networkEntity = try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<[BannerNetworkEntity_ME], Error>) -> Void in
+            let _ = self.network.fetch { result in
+                switch result {
+                case let .success(networkEntity):
+                    continuation.resume(returning: networkEntity)
+                case let .failure(networkError):
+                    continuation.resume(throwing: networkError)
+                }
+            }
+            sleep(2)
+        }
+        let domain = networkEntity.map { $0.parseToDomain() }
+        return domain
+    }
     
 }

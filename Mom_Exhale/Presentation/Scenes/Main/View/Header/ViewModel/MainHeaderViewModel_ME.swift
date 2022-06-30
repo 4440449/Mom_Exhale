@@ -1,0 +1,55 @@
+//
+//  MainHeaderViewModel_ME.swift
+//  Mom_Exhale
+//
+//  Created by Maxim on 30.06.2022.
+//
+
+import MommysEye
+
+
+protocol MainHeaderViewModelProtocol_ME: AnyObject {
+    var banners: Publisher<[Banner_ME]> { get }
+    var isLoading: Publisher<Bool> { get }
+    func loadInitialState()
+}
+
+
+
+final class MainHeaderViewModel_ME: MainHeaderViewModelProtocol_ME {
+
+        // MARK: - Dependencies
+
+    private let repository: BannerGateway_ME
+    
+    
+    // MARK: - Init
+
+    init(repository: BannerGateway_ME) {
+        self.repository = repository
+    }
+    
+    
+    // MARK: - State
+
+    var banners = Publisher(value: [Banner_ME]())
+    var isLoading = Publisher(value: false)
+    
+    
+    // MARK: - Interface
+
+    func loadInitialState() {
+        isLoading.value = true
+        let _ = Task {
+            do {
+                let result = try await self.repository.fetch()
+                banners.value = result
+            } catch let domainError {
+                print(domainError)
+            }
+            self.isLoading.value = false
+        }
+    }
+    
+    
+}

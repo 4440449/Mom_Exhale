@@ -9,7 +9,8 @@
 import Foundation
 
 
-struct Banner {
+struct Banner_ME {
     let id: UUID
+    let title: String
     let article: String
 }

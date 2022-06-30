@@ -8,5 +8,5 @@
 
 protocol BannerGateway_ME {
     
-    func fetch() async throws -> [Banner]
+    func fetch() async throws -> [Banner_ME]
 }

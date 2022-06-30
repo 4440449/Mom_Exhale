@@ -5,9 +5,7 @@
 //  Created by Maxim on 31.12.2021.
 //
 
-import Foundation
 import UIKit
-
 
 
 final class MainSceneConfigurator_ME: SceneConfiguratorProtocol_ME {
@@ -18,7 +16,10 @@ final class MainSceneConfigurator_ME: SceneConfiguratorProtocol_ME {
                                    repositoryDIContainer: repositoryDIContainer)
         let viewModel = MainViewModel_ME(repository: moduleRepository,
                                          router: router)
-        let vc = MainViewController_ME(viewModel: viewModel)
+        
+        let headerConfigurator = MainHeaderConfigurator_ME(repositoryDIContainer: repositoryDIContainer)
+        let vc = MainViewController_ME(viewModel: viewModel,
+                                       headerConfigurator: headerConfigurator)
         let navigationVC = UINavigationController(rootViewController: vc)
         router.navigationContainer = navigationVC
         return navigationVC
