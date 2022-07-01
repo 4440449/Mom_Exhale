@@ -22,6 +22,7 @@ class MainCollectionViewCell_ME: UICollectionViewCell {
         self.layer.shadowColor = UIColor.black.cgColor
         self.layer.shadowRadius = 10
         self.layer.shadowOpacity = 0.1
+//        self.layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
         contentView.addSubview(moduleLabel)
         setupLayout()
     }

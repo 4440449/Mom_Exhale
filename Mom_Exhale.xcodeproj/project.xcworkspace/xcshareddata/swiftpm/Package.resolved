@@ -11,6 +11,24 @@
         }
       },
       {
+        "package": "BabyTrackerModule",
+        "repositoryURL": "https://github.com/4440449/BabyTrackerModule.git",
+        "state": {
+          "branch": "master",
+          "revision": "42cc94da4505a62af2a74789c9136212fd0547e7",
+          "version": null
+        }
+      },
+      {
+        "package": "CalmingNotificationsModule",
+        "repositoryURL": "https://github.com/4440449/CalmingNotificationsModule.git",
+        "state": {
+          "branch": "master",
+          "revision": "3d3ddf5ca9c9a030ca633b52a06a53c3b7e0a018",
+          "version": null
+        }
+      },
+      {
         "package": "MommysEye",
         "repositoryURL": "https://github.com/4440449/MommysEye",
         "state": {
@@ -20,11 +38,11 @@
         }
       },
       {
-        "package": "SPM_TEST",
-        "repositoryURL": "https://github.com/4440449/SPM_TEST.git",
+        "package": "SamoprikormModule",
+        "repositoryURL": "https://github.com/4440449/SamoprikormModule.git",
         "state": {
           "branch": "master",
-          "revision": "5846b7a8278857d42a2087fe9021655098b00351",
+          "revision": "068b397442116d6e90a731dc58379bb6cb808b41",
           "version": null
         }
       }

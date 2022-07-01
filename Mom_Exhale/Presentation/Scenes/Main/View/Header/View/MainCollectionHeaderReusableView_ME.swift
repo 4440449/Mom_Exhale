@@ -29,6 +29,7 @@ class MainCollectionHeaderReusableView_ME: UICollectionReusableView,
         self.layer.shadowColor = UIColor.black.cgColor
         self.layer.shadowRadius = 10
         self.layer.shadowOpacity = 0.1
+//        self.layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
         self.layer.cornerRadius = 15
         self.addSubview(collection)
         self.addSubview(pageControl)
@@ -136,7 +137,3 @@ class MainCollectionHeaderReusableView_ME: UICollectionReusableView,
     }
     
 }
-
-
-
-

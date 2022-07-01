@@ -5,9 +5,12 @@
 //  Created by Maxim on 05.01.2022.
 //
 
+import Foundation
 import UIKit
 import SwiftUI
-import SPM_TEST
+import SamoprikormModule
+import BabyTrackerModule
+import CalmingNotificationsModule
 
 
 protocol AppModuleConfiguratorProtocol_ME {
@@ -17,14 +20,6 @@ protocol AppModuleConfiguratorProtocol_ME {
 
 struct AppModuleConfigurator_ME: AppModuleConfiguratorProtocol_ME {
     
-    private static func storyboard(name: String) -> UIViewController? {
-         guard let _ = Bundle.main.path(forResource: name, ofType: "storyboardc") else { return nil }
-         let stb = UIStoryboard(name: name, bundle: nil)
-         guard let vc = stb.instantiateInitialViewController() else { return nil }
-         return vc
-     }
-    
-        
     static func configureModuleScene(by key: Module_ME.KeyName) -> UIViewController? {
         #if ROOT_APP
         switch key {
@@ -32,22 +27,16 @@ struct AppModuleConfigurator_ME: AppModuleConfiguratorProtocol_ME {
             let view = MainSceneConfigurator_SP.configure()
             return UIHostingController(rootView: view)
         case .calmingNotifications:
-            return nil
-//            let repositoryDIContainer = GatewaysRepositoryDIContainer_CN(
-//                quoteCard:
-//                    GatewaysRepositoryDIContainer_CN.createQuoteCardRepository(),
-//                notification:
-//                    GatewaysRepositoryDIContainer_CN.createNotificationRepository(),
-//                menuItem:
-//                    GatewaysRepositoryDIContainer_CN.createMenuItemRepository() )
-//           return = SplashSceneConfigurator_CN.configure(
-//                repositoryDIContainer: repositoryDIContainer )
+            let view = SplashSceneConfigurator_CN.configure()
+            return view
         case .babyTracker:
-            return storyboard(name: key.rawValue)
+            guard let _ = Bundle.getBTWWModuleBundle().path(forResource: key.rawValue, ofType: "storyboardc") else { return nil }
+            let stb = UIStoryboard(name: key.rawValue, bundle: Bundle.getBTWWModuleBundle())
+            guard let vc = stb.instantiateInitialViewController() else { return nil }
+            return vc
         }
         #else
         return nil
-        
         #endif
     }
 }
