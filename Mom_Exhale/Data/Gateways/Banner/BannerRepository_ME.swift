@@ -34,7 +34,6 @@ final class BannerRepository_ME: BannerGateway_ME {
                     continuation.resume(throwing: networkError)
                 }
             }
-            sleep(2)
         }
         let domain = networkEntity.map { $0.parseToDomain() }
         return domain

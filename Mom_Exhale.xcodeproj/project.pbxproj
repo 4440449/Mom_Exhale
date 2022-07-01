@@ -67,6 +67,10 @@
 		94B0D1BF286E43980006899B /* BannerNetworkRepository_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B0D1BD286E43980006899B /* BannerNetworkRepository_ME.swift */; };
 		94B0D1C2286E44320006899B /* BannerNetworkEntity_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B0D1C1286E44320006899B /* BannerNetworkEntity_ME.swift */; };
 		94B0D1C3286E44320006899B /* BannerNetworkEntity_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B0D1C1286E44320006899B /* BannerNetworkEntity_ME.swift */; };
+		94B0D1CA286EE5D20006899B /* HeaderCollectionViewCell_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B0D1C9286EE5D20006899B /* HeaderCollectionViewCell_ME.swift */; };
+		94B0D1CB286EE5D20006899B /* HeaderCollectionViewCell_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B0D1C9286EE5D20006899B /* HeaderCollectionViewCell_ME.swift */; };
+		94B0D1CE286EFCB40006899B /* Test_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B0D1CD286EFCB40006899B /* Test_ME.swift */; };
+		94B0D1CF286EFCB40006899B /* Test_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B0D1CD286EFCB40006899B /* Test_ME.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +108,8 @@
 		94B0D1B8286E3EA20006899B /* MainHeaderConfigurator_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHeaderConfigurator_ME.swift; sourceTree = "<group>"; };
 		94B0D1BD286E43980006899B /* BannerNetworkRepository_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerNetworkRepository_ME.swift; sourceTree = "<group>"; };
 		94B0D1C1286E44320006899B /* BannerNetworkEntity_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerNetworkEntity_ME.swift; sourceTree = "<group>"; };
+		94B0D1C9286EE5D20006899B /* HeaderCollectionViewCell_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionViewCell_ME.swift; sourceTree = "<group>"; };
+		94B0D1CD286EFCB40006899B /* Test_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test_ME.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -356,6 +362,7 @@
 			isa = PBXGroup;
 			children = (
 				94B0D1A1286DAE6B0006899B /* Configurator */,
+				94B0D1D0286EFCBD0006899B /* Test */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -420,6 +427,7 @@
 			isa = PBXGroup;
 			children = (
 				94AB0CD8286A532800742A33 /* MainCollectionHeaderReusableView_ME.swift */,
+				94B0D1CC286EE60A0006899B /* Header Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -439,6 +447,22 @@
 				94B0D1C1286E44320006899B /* BannerNetworkEntity_ME.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		94B0D1CC286EE60A0006899B /* Header Cell */ = {
+			isa = PBXGroup;
+			children = (
+				94B0D1C9286EE5D20006899B /* HeaderCollectionViewCell_ME.swift */,
+			);
+			path = "Header Cell";
+			sourceTree = "<group>";
+		};
+		94B0D1D0286EFCBD0006899B /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				94B0D1CD286EFCB40006899B /* Test_ME.swift */,
+			);
+			path = Test;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -569,6 +593,7 @@
 				94B0D1B5286E2AFC0006899B /* MainHeaderViewModel_ME.swift in Sources */,
 				94AB0CE3286B45BB00742A33 /* ModuleGateway_ME.swift in Sources */,
 				94B0D19F286DAE660006899B /* SceneConfigurator_ME.swift in Sources */,
+				94B0D1CE286EFCB40006899B /* Test_ME.swift in Sources */,
 				94AB0CC5286A50C200742A33 /* MainViewController_ME.swift in Sources */,
 				94AB0CEF286B476E00742A33 /* MainViewModel_ME.swift in Sources */,
 				94AB0CE8286B465700742A33 /* BannerGateway_ME.swift in Sources */,
@@ -578,6 +603,7 @@
 				94AB0CC3286A50C200742A33 /* SceneDelegate.swift in Sources */,
 				94AB0CD6286A527800742A33 /* MainCollectionViewCell_ME.swift in Sources */,
 				94B0D1A5286DAFDB0006899B /* GatewaysRepositoryDIContainer_ME.swift in Sources */,
+				94B0D1CA286EE5D20006899B /* HeaderCollectionViewCell_ME.swift in Sources */,
 				94B0D1AD286DC20E0006899B /* ModuleNetworkRepository_ME.swift in Sources */,
 				94B0D1A9286DB2250006899B /* BannerRepository_ME.swift in Sources */,
 			);
@@ -599,6 +625,7 @@
 				94B0D1B6286E2AFC0006899B /* MainHeaderViewModel_ME.swift in Sources */,
 				94AB0D06286C3F8400742A33 /* ModuleGateway_ME.swift in Sources */,
 				94B0D1A0286DAE660006899B /* SceneConfigurator_ME.swift in Sources */,
+				94B0D1CF286EFCB40006899B /* Test_ME.swift in Sources */,
 				94AB0D07286C3F8400742A33 /* MainViewController_ME.swift in Sources */,
 				94AB0D08286C3F8400742A33 /* MainViewModel_ME.swift in Sources */,
 				94AB0D09286C3F8400742A33 /* BannerGateway_ME.swift in Sources */,
@@ -608,6 +635,7 @@
 				94AB0D0C286C3F8400742A33 /* SceneDelegate.swift in Sources */,
 				94AB0D0D286C3F8400742A33 /* MainCollectionViewCell_ME.swift in Sources */,
 				94B0D1A6286DAFDB0006899B /* GatewaysRepositoryDIContainer_ME.swift in Sources */,
+				94B0D1CB286EE5D20006899B /* HeaderCollectionViewCell_ME.swift in Sources */,
 				94B0D1AE286DC20E0006899B /* ModuleNetworkRepository_ME.swift in Sources */,
 				94B0D1AA286DB2250006899B /* BannerRepository_ME.swift in Sources */,
 			);

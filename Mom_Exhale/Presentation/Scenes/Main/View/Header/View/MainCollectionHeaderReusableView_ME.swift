@@ -7,7 +7,9 @@
 
 import UIKit
 
-class MainCollectionHeaderReusableView_ME: UICollectionReusableView, UIScrollViewDelegate {
+class MainCollectionHeaderReusableView_ME: UICollectionReusableView,
+                                           UICollectionViewDelegate,
+                                           UICollectionViewDataSource {
     
     // MARK: - Static
     
@@ -16,7 +18,7 @@ class MainCollectionHeaderReusableView_ME: UICollectionReusableView, UIScrollVie
     
     // MARK: - Dependencies
     
-    var viewModel: MainHeaderViewModelProtocol_ME?
+   var viewModel: MainHeaderViewModelProtocol_ME?
     
     
     // MARK: - Init
@@ -24,14 +26,13 @@ class MainCollectionHeaderReusableView_ME: UICollectionReusableView, UIScrollVie
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .white
-        self.layer.cornerRadius = 15
         self.layer.shadowColor = UIColor.black.cgColor
         self.layer.shadowRadius = 10
         self.layer.shadowOpacity = 0.1
-        self.addSubview(scrollView)
+        self.layer.cornerRadius = 15
+        self.addSubview(collection)
         self.addSubview(pageControl)
         self.addSubview(activity)
-//        activity.startAnimating()
         setupLayout()
     }
     
@@ -41,14 +42,38 @@ class MainCollectionHeaderReusableView_ME: UICollectionReusableView, UIScrollVie
     
     
     // MARK: - Lifecycle
-
+    
     func viewDidLoad() {
         setupObservers()
         viewModel?.loadInitialState()
     }
     
     
+    // MARK: - Private logic
+    
+    private func setupObservers() {
+        viewModel?.banners.subscribe(observer: self) { [weak self] banners in
+            self?.collection.reloadData()
+            self?.pageControl.numberOfPages = banners.count
+        }
+        viewModel?.isLoading.subscribe(observer: self) { [weak self] isLoading in
+            isLoading ? self?.activity.startAnimating() : self?.activity.stopAnimating()
+        }
+    }
+    
+    
     // MARK: - Property
+    
+    private lazy var collection: UICollectionView = {
+        let collection = UICollectionView(frame: self.bounds,
+                                          collectionViewLayout: setupCollectionViewLayout())
+        collection.register(HeaderCollectionViewCell_ME.self,
+                            forCellWithReuseIdentifier: HeaderCollectionViewCell_ME.identifier)
+        collection.layer.cornerRadius = 15
+        collection.dataSource = self
+        collection.delegate = self
+        return collection
+    }()
     
     private lazy var activity: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView()
@@ -60,19 +85,6 @@ class MainCollectionHeaderReusableView_ME: UICollectionReusableView, UIScrollVie
         return indicator
     }()
     
-    private lazy var scrollView: UIScrollView = {
-        let scroll = UIScrollView()
-        scroll.isPagingEnabled = true
-        //        scroll.contentSize = CGSize(width: self.bounds.width * 6,
-        //                                    height: self.bounds.height)
-        scroll.showsHorizontalScrollIndicator = false
-        scroll.layer.cornerRadius = 15
-        scroll.translatesAutoresizingMaskIntoConstraints = false
-        scroll.delegate = self
-        return scroll
-    }()
-    
-    
     private lazy var pageControl: UIPageControl = {
         let control = UIPageControl()
         control.numberOfPages = 0
@@ -81,48 +93,50 @@ class MainCollectionHeaderReusableView_ME: UICollectionReusableView, UIScrollVie
         return control
     }()
     
+    
+    // MARK: - Layout
+
     private func setupLayout() {
-        scrollView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        scrollView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        scrollView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        scrollView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        
         pageControl.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         pageControl.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
     }
     
-    
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        let pageNumber = round(scrollView.contentOffset.x / scrollView.frame.size.width)
-        pageControl.currentPage = Int(pageNumber)
-    }
-   
-    
-    // MARK: - Private logic
-
-    private func setupObservers() {
-        viewModel?.banners.subscribe(observer: self) { [weak self] banners in
-            self?.setupBanners(banners)
+    private func setupCollectionViewLayout() -> UICollectionViewCompositionalLayout {
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+                                              heightDimension: .fractionalHeight(1))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+                                               heightDimension: .fractionalHeight(1))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        let section = NSCollectionLayoutSection(group: group)
+        section.orthogonalScrollingBehavior = .paging
+        section.visibleItemsInvalidationHandler = { [weak self] (items, offset, env) -> Void in
+            guard let strongSelf = self else { return }
+            let pageNumber = round(offset.x / strongSelf.collection.bounds.width)
+            strongSelf.pageControl.currentPage = Int(pageNumber)
         }
-        viewModel?.isLoading.subscribe(observer: self) { [weak self] isLoading in
-            isLoading ? self?.activity.startAnimating() : self?.activity.stopAnimating()
-        }
+        return UICollectionViewCompositionalLayout(section: section)
     }
     
-    private func setupBanners(_ banners: [Banner_ME]) {
-        pageControl.numberOfPages = banners.count
-        scrollView.contentSize = CGSize(width: self.bounds.width * CGFloat(banners.count),
-                                        height: self.bounds.height)
+    
+    // MARK: - Collection Data source
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel?.banners.value.count ?? 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HeaderCollectionViewCell_ME.identifier, for: indexPath) as? HeaderCollectionViewCell_ME else {
+            fatalError()
+        }
         let colorsArr: [UIColor] = [.red, .green, .magenta, .blue, .tintColor, .brown, .cyan]
-        for x in 0..<banners.count {
-            let view = UIView()
-            view.backgroundColor = colorsArr.randomElement()
-            view.frame = CGRect(x: self.bounds.maxX * CGFloat(x),
-                                y: self.bounds.minY,
-                                width: self.bounds.width,
-                                height: self.bounds.height)
-            scrollView.addSubview(view)
-        }
+        cell.backgroundColor = colorsArr.randomElement()
+        
+        return cell
     }
     
 }
+
+
+
+

@@ -34,7 +34,6 @@ final class ModuleRepository_ME: ModuleGateway_ME {
                     continuation.resume(throwing: networkError)
                 }
             }
-            sleep(2)
         }
         do {
             let domain = try networkEntity.map { try $0.parseToDomain() }

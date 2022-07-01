@@ -43,7 +43,6 @@ class MainViewController_ME: UIViewController,
         initialUISetup()
         setupObservers()
         viewModel.loadInitialState()
-        
     }
     
     
@@ -91,10 +90,8 @@ class MainViewController_ME: UIViewController,
         collection.register(MainCollectionViewCell_ME.self,
                             forCellWithReuseIdentifier: MainCollectionViewCell_ME.identifier)
         collection.register(MainCollectionHeaderReusableView_ME.self,
-                            //            type(of: header),
                             forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                             withReuseIdentifier: MainCollectionHeaderReusableView_ME.identifier)
-        //                                (type(of: header).identifier))
         collection.contentInset.top = 20
         collection.alwaysBounceVertical = true
         collection.backgroundColor = UIColor(named: "background")
