@@ -30,8 +30,8 @@ struct AppModuleConfigurator_ME: AppModuleConfiguratorProtocol_ME {
             let view = SplashSceneConfigurator_CN.configure()
             return view
         case .babyTracker:
-            guard let _ = Bundle.getBTWWModuleBundle().path(forResource: key.rawValue, ofType: "storyboardc") else { return nil }
-            let stb = UIStoryboard(name: key.rawValue, bundle: Bundle.getBTWWModuleBundle())
+            guard let _ = Bundle.BTWWModule().path(forResource: key.rawValue, ofType: "storyboardc") else { return nil }
+            let stb = UIStoryboard(name: key.rawValue, bundle: Bundle.BTWWModule())
             guard let vc = stb.instantiateInitialViewController() else { return nil }
             return vc
         }

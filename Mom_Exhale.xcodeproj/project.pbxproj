@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		94157E98286F209400AC0706 /* BabyTrackerModule in Frameworks */ = {isa = PBXBuildFile; productRef = 94157E97286F209400AC0706 /* BabyTrackerModule */; };
+		946AF5BA2871CA560047E508 /* BabyTrackerModule in Frameworks */ = {isa = PBXBuildFile; productRef = 946AF5B92871CA560047E508 /* BabyTrackerModule */; };
 		94A50DD9286F501B00C2C246 /* SceneState_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A50DD8286F501B00C2C246 /* SceneState_ME.swift */; };
 		94A50DDA286F501B00C2C246 /* SceneState_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A50DD8286F501B00C2C246 /* SceneState_ME.swift */; };
 		94A50DDD286F551200C2C246 /* CalmingNotificationsModule in Frameworks */ = {isa = PBXBuildFile; productRef = 94A50DDC286F551200C2C246 /* CalmingNotificationsModule */; };
@@ -133,7 +133,7 @@
 			files = (
 				94A50DDD286F551200C2C246 /* CalmingNotificationsModule in Frameworks */,
 				94B0D17A286C79C00006899B /* BabyNet in Frameworks */,
-				94157E98286F209400AC0706 /* BabyTrackerModule in Frameworks */,
+				946AF5BA2871CA560047E508 /* BabyTrackerModule in Frameworks */,
 				94B0D178286C79BD0006899B /* MommysEye in Frameworks */,
 				94B0D1D7286F150E0006899B /* SamoprikormModule in Frameworks */,
 			);
@@ -522,8 +522,8 @@
 				94B0D177286C79BD0006899B /* MommysEye */,
 				94B0D179286C79C00006899B /* BabyNet */,
 				94B0D1D6286F150E0006899B /* SamoprikormModule */,
-				94157E97286F209400AC0706 /* BabyTrackerModule */,
 				94A50DDC286F551200C2C246 /* CalmingNotificationsModule */,
+				946AF5B92871CA560047E508 /* BabyTrackerModule */,
 			);
 			productName = "Moms Exhale";
 			productReference = 94AB0D16286C3F8400742A33 /* Mom_Exhale Root App.app */;
@@ -557,8 +557,8 @@
 				94B0D171286C79910006899B /* XCRemoteSwiftPackageReference "MommysEye" */,
 				94B0D174286C799B0006899B /* XCRemoteSwiftPackageReference "BabyNet" */,
 				94B0D1D4286F14DA0006899B /* XCRemoteSwiftPackageReference "SamoprikormModule" */,
-				94157E96286F209400AC0706 /* XCRemoteSwiftPackageReference "BabyTrackerModule" */,
 				94A50DDB286F551200C2C246 /* XCRemoteSwiftPackageReference "CalmingNotificationsModule" */,
+				946AF5B82871CA560047E508 /* XCRemoteSwiftPackageReference "BabyTrackerModule" */,
 			);
 			productRefGroup = 94AB0CBE286A50C200742A33 /* Products */;
 			projectDirPath = "";
@@ -936,7 +936,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		94157E96286F209400AC0706 /* XCRemoteSwiftPackageReference "BabyTrackerModule" */ = {
+		946AF5B82871CA560047E508 /* XCRemoteSwiftPackageReference "BabyTrackerModule" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/4440449/BabyTrackerModule.git";
 			requirement = {
@@ -979,9 +979,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		94157E97286F209400AC0706 /* BabyTrackerModule */ = {
+		946AF5B92871CA560047E508 /* BabyTrackerModule */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 94157E96286F209400AC0706 /* XCRemoteSwiftPackageReference "BabyTrackerModule" */;
+			package = 946AF5B82871CA560047E508 /* XCRemoteSwiftPackageReference "BabyTrackerModule" */;
 			productName = BabyTrackerModule;
 		};
 		94A50DDC286F551200C2C246 /* CalmingNotificationsModule */ = {
