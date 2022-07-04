@@ -21,6 +21,7 @@ final class MainSceneConfigurator_ME: SceneConfiguratorProtocol_ME {
         let vc = MainViewController_ME(viewModel: viewModel,
                                        headerConfigurator: headerConfigurator)
         let navigationVC = UINavigationController(rootViewController: vc)
+        navigationVC.navigationBar.standardAppearance.largeTitleTextAttributes = [.font : UIFont(name: "Montserrat-Black", size: 38)!]
         router.navigationContainer = navigationVC
         return navigationVC
     }
