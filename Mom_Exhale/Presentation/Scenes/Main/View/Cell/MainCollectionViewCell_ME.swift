@@ -22,7 +22,7 @@ class MainCollectionViewCell_ME: UICollectionViewCell {
         self.layer.shadowColor = UIColor.black.cgColor
         self.layer.shadowRadius = 10
         self.layer.shadowOpacity = 0.1
-//        self.layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
+        self.layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
         contentView.addSubview(moduleLabel)
         setupLayout()
     }
@@ -37,6 +37,7 @@ class MainCollectionViewCell_ME: UICollectionViewCell {
     private lazy var moduleLabel: UILabel = {
         let label = UILabel()
         label.text = "Test"
+        label.textColor = .black
         label.numberOfLines = 2
         label.textAlignment = .left
         label.translatesAutoresizingMaskIntoConstraints = false
