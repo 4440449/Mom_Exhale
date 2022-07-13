@@ -28,10 +28,9 @@ final class MainRouter_ME: MainRouterProtocol_ME {
     
     func showModule(by key: Module_ME.KeyName) {
         guard let vc = AppModuleConfigurator_ME.configureModuleScene(by: key),
-              let container = navigationContainer
-        else {
-            return
-        }
+              let container = navigationContainer else {
+                  return
+              }
         vc.modalPresentationStyle = .overFullScreen
         container.present(vc, animated: true, completion: nil)
     }
