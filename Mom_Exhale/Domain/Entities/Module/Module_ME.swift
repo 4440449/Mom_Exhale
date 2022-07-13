@@ -9,12 +9,15 @@ import Foundation
 
 
 import Foundation
+import UIKit
 
 
 struct Module_ME {
     let id: UUID
     let keyName: KeyName
     let title: String
+    let image: UIImage
+    let titleColor: TitleColor_ME
     
     enum KeyName: String {
         case BLW = "Samoprikorm"
