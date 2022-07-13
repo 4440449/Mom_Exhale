@@ -29,8 +29,8 @@ final class MainHeaderConfigurator_ME: MainHeaderConfiguratorProtocol_ME {
     // MARK: - Interface
 
     func configure(_ header: MainCollectionHeaderReusableView_ME) {
-        let bannerRepository = repositoryDIContainer.banner
-        let viewModel = MainHeaderViewModel_ME(repository: bannerRepository)
-        header.viewModel = viewModel
+        let basicArticleRepository = repositoryDIContainer.basicArticle
+        let viewModel = MainHeaderViewModel_ME(repository: basicArticleRepository)
+        header.setupViewModel(viewModel)
     }
 }
