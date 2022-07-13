@@ -50,6 +50,16 @@ class MainCollectionViewCell_ME: UICollectionViewCell {
         moduleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 10).isActive = true
     }
     
+    override var isHighlighted: Bool {
+      didSet {
+        UIView.animate(withDuration: 0.2) {
+          let scale: CGFloat = 0.95
+          self.transform = self.isHighlighted ? CGAffineTransform(scaleX: scale, y: scale) : .identity
+            self.alpha = self.isHighlighted ? 0.6 : 1
+        }
+      }
+    }
+    
     
     func setupTextLabel(text: String) {
         moduleLabel.text = text
