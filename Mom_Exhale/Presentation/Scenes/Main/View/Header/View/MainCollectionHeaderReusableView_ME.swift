@@ -18,22 +18,22 @@ class MainCollectionHeaderReusableView_ME: UICollectionReusableView,
     
     // MARK: - Dependencies
     
-   var viewModel: MainHeaderViewModelProtocol_ME?
+    private var viewModel: MainHeaderViewModelProtocol_ME?
+    
+    func setupViewModel(_ viewModel: MainHeaderViewModelProtocol_ME) {
+        self.viewModel = viewModel
+    }
     
     
     // MARK: - Init
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .white
-        self.layer.shadowColor = UIColor.black.cgColor
-        self.layer.shadowRadius = 10
-        self.layer.shadowOpacity = 0.1
-        self.layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
-        self.layer.cornerRadius = 15
         self.addSubview(collection)
+        self.addSubview(articleSourceLabel)
         self.addSubview(pageControl)
         self.addSubview(activity)
+        setupInitialUI()
         setupLayout()
     }
     
@@ -50,12 +50,12 @@ class MainCollectionHeaderReusableView_ME: UICollectionReusableView,
     }
     
     
-    // MARK: - Private logic
+    // MARK: - Observer
     
     private func setupObservers() {
-        viewModel?.banners.subscribe(observer: self) { [weak self] banners in
+        viewModel?.basicArticles.subscribe(observer: self) { [weak self] articles in
             self?.collection.reloadData()
-            self?.pageControl.numberOfPages = banners.count
+            self?.pageControl.numberOfPages = articles.count
         }
         viewModel?.isLoading.subscribe(observer: self) { [weak self] isLoading in
             isLoading ? self?.activity.startAnimating() : self?.activity.stopAnimating()
@@ -76,6 +76,17 @@ class MainCollectionHeaderReusableView_ME: UICollectionReusableView,
         return collection
     }()
     
+    private lazy var articleSourceLabel: UILabel = {
+        let label = UILabel()
+        label.text = "базовые статьи"
+        label.font = UIFont(name: "Montserrat-Regular", size: 13)!
+        label.textColor = .label
+        label.numberOfLines = 1
+        label.textAlignment = .right
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     private lazy var activity: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView()
         indicator.center = CGPoint(x: self.bounds.midX,
@@ -90,16 +101,35 @@ class MainCollectionHeaderReusableView_ME: UICollectionReusableView,
         let control = UIPageControl()
         control.numberOfPages = 0
         control.currentPage = 0
+        control.pageIndicatorTintColor = .systemGray4
+        control.currentPageIndicatorTintColor = .systemGray
         control.translatesAutoresizingMaskIntoConstraints = false
         return control
     }()
     
     
+    // MARK: - Initital UI
+    
+    private func setupInitialUI() {
+        //TODO: - shadowColor handling!
+        //TODO: - stroke croner radius!
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowRadius = 10
+        self.layer.shadowOpacity = 0.1
+        self.layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
+        self.layer.cornerRadius = 15
+    }
+    
+    
     // MARK: - Layout
-
+    
     private func setupLayout() {
         pageControl.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         pageControl.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        
+        articleSourceLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 15).isActive = true
+        articleSourceLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -15).isActive = true
+        articleSourceLabel.widthAnchor.constraint(equalToConstant: 110).isActive = true
     }
     
     private func setupCollectionViewLayout() -> UICollectionViewCompositionalLayout {
@@ -123,16 +153,17 @@ class MainCollectionHeaderReusableView_ME: UICollectionReusableView,
     // MARK: - Collection Data source
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel?.banners.value.count ?? 0
+        return viewModel?.basicArticles.value.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HeaderCollectionViewCell_ME.identifier, for: indexPath) as? HeaderCollectionViewCell_ME else {
             fatalError()
         }
-        let colorsArr: [UIColor] = [.red, .green, .magenta, .blue, .tintColor, .brown, .cyan]
-        cell.backgroundColor = colorsArr.randomElement()
-        
+        let title = viewModel?.basicArticles.value[indexPath.row].title ?? ""
+        cell.setupCellUI(text: title)
+        //        let colorsArr: [UIColor] = [.red, .green, .magenta, .blue, .tintColor, .brown, .cyan]
+        //        cell.backgroundColor = colorsArr.randomElement()
         return cell
     }
     
