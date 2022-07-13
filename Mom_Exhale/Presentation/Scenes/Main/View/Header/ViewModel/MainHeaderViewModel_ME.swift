@@ -9,7 +9,7 @@ import MommysEye
 
 
 protocol MainHeaderViewModelProtocol_ME: AnyObject {
-    var banners: Publisher<[Banner_ME]> { get }
+    var basicArticles: Publisher<[BasicArticle_ME]> { get }
     var isLoading: Publisher<Bool> { get }
     func loadInitialState()
 }
@@ -20,19 +20,19 @@ final class MainHeaderViewModel_ME: MainHeaderViewModelProtocol_ME {
 
         // MARK: - Dependencies
 
-    private let repository: BannerGateway_ME
+    private let repository: BasicArticleGateway_ME
     
     
     // MARK: - Init
 
-    init(repository: BannerGateway_ME) {
+    init(repository: BasicArticleGateway_ME) {
         self.repository = repository
     }
     
     
     // MARK: - State
 
-    var banners = Publisher(value: [Banner_ME]())
+    var basicArticles = Publisher(value: [BasicArticle_ME]())
     var isLoading = Publisher(value: false)
     
     
@@ -43,7 +43,7 @@ final class MainHeaderViewModel_ME: MainHeaderViewModelProtocol_ME {
         let _ = Task {
             do {
                 let result = try await self.repository.fetch()
-                banners.value = result
+                basicArticles.value = result
             } catch let domainError {
                 print(domainError)
             }
