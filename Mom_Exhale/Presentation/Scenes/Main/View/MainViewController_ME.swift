@@ -15,16 +15,19 @@ class MainViewController_ME: UIViewController,
     
     private let viewModel: MainViewModelProtocol_ME
     private let headerConfigurator: MainHeaderConfiguratorProtocol_ME
+    private let footerConfigurator: MainFooterConfiguratorProtocol_ME
     
     
     // MARK: - Init
     
     init(viewModel: MainViewModelProtocol_ME,
          headerConfigurator: MainHeaderConfiguratorProtocol_ME,
+         footerConfigurator: MainFooterConfiguratorProtocol_ME,
          nibName: String? = nil,
          bundle: Bundle? = nil) {
         self.viewModel = viewModel
         self.headerConfigurator = headerConfigurator
+        self.footerConfigurator = footerConfigurator
         super.init(nibName: nibName,
                    bundle: bundle)
     }
@@ -40,7 +43,7 @@ class MainViewController_ME: UIViewController,
         super.viewDidLoad()
         view.addSubview(collection)
         view.addSubview(activity)
-        initialUISetup()
+        setupInitialUI()
         setupObservers()
         viewModel.loadInitialState()
     }
@@ -92,36 +95,90 @@ class MainViewController_ME: UIViewController,
         collection.register(MainCollectionHeaderReusableView_ME.self,
                             forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                             withReuseIdentifier: MainCollectionHeaderReusableView_ME.identifier)
-        collection.contentInset.top = 20
+        collection.register(MainCollectionFooterReusableView_ME.self,
+                            forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
+                            withReuseIdentifier: MainCollectionFooterReusableView_ME.identifier)
+        collection.contentInset.top = 5
         collection.alwaysBounceVertical = true
+        collection.showsVerticalScrollIndicator = false
         collection.backgroundColor = UIColor(named: "background")
         collection.dataSource = self
         collection.delegate = self
+      
         return collection
     }()
+    
+    private lazy var logo1Label: UILabel = {
+        let label = UILabel()
+        label.text = "п р о е к т"
+        label.font = UIFont(name: "Montserrat-Light", size: 16)!
+        label.textColor = .label
+        label.numberOfLines = 1
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private lazy var logo2Label: UILabel = {
+        let label = UILabel()
+        label.text = "#мамавыдохни"
+        label.font = UIFont(name: "Montserrat-Black", size: 29)!
+        label.textColor = .label
+        label.numberOfLines = 1
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    
+    // MARK: - Initital UI
+
+    private func setupInitialUI() {
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.topItem?.rightBarButtonItem = userNavBarButton
+        self.navigationController?.navigationBar.addSubview(logo1Label)
+        self.navigationController?.navigationBar.addSubview(logo2Label)
+        logo1Label.centerXAnchor.constraint(equalTo: self.navigationController!.navigationBar.centerXAnchor).isActive = true
+        logo1Label.topAnchor.constraint(greaterThanOrEqualTo: self.navigationController!.navigationBar.topAnchor, constant: 20).isActive = true
+        logo2Label.centerXAnchor.constraint(equalTo: self.navigationController!.navigationBar.centerXAnchor).isActive = true
+        logo2Label.topAnchor.constraint(equalTo: logo1Label.bottomAnchor).isActive = true
+        logo2Label.bottomAnchor.constraint(lessThanOrEqualTo: self.navigationController!.navigationBar.bottomAnchor, constant: -24).isActive = true
+    }
     
     
     // MARK: - Layout
     
     private func setupCollectionViewLayout() -> UICollectionViewCompositionalLayout {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5),
-                                              heightDimension: .fractionalHeight(1))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
+        let leadingItemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),heightDimension: .fractionalHeight(0.5))
+        let leadingItem = NSCollectionLayoutItem(layoutSize: leadingItemSize)
+        leadingItem.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
+        
+        let leadingGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5),heightDimension: .fractionalHeight(1))
+        let leadingGroup = NSCollectionLayoutGroup.vertical(layoutSize: leadingGroupSize, subitems: [leadingItem])
+        
+        let trailingItemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5),heightDimension: .fractionalHeight(1))
+        let trailingItem = NSCollectionLayoutItem(layoutSize: trailingItemSize)
+        trailingItem.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
         
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
-                                               heightDimension: .fractionalWidth(0.5))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+                                               heightDimension: .fractionalHeight(0.4))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [leadingGroup, trailingItem])
         
         let header = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: .init(widthDimension: .fractionalWidth(1),
-                              heightDimension: .fractionalHeight(0.2)),
+                              heightDimension: .fractionalHeight(0.17)),
             elementKind: UICollectionView.elementKindSectionHeader,
             alignment: .top)
         
+        let footer = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: .init(widthDimension: .fractionalWidth(1),
+                              heightDimension: .fractionalHeight(0.17)),
+            elementKind: UICollectionView.elementKindSectionFooter,
+            alignment: .bottom)
+        
         let section = NSCollectionLayoutSection(group: group)
-        section.boundarySupplementaryItems = [header]
-        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 15, bottom: 0, trailing: 15)
+        section.boundarySupplementaryItems = [header, footer]
+        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 30, bottom: 10, trailing: 30)
         
         return UICollectionViewCompositionalLayout(section: section)
     }
@@ -137,38 +194,64 @@ class MainViewController_ME: UIViewController,
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainCollectionViewCell_ME.identifier, for: indexPath) as? MainCollectionViewCell_ME else {
             fatalError()
         }
-        let text = viewModel.modules.value[indexPath.row].title
-        cell.setupTextLabel(text: text)
+        let module = viewModel.modules.value[indexPath.row]
+        switch module.keyName {
+        case .babyTracker:
+            cell.setupCellUI(position: .topLeading,
+                             text: module.title,
+                             textColor: module.titleColor.color(),
+                             image: module.image)
+        case .BLW:
+            cell.setupCellUI(position: .bottomTrailing,
+                             text: module.title,
+                             textColor: module.titleColor.color(),
+                             image: module.image)
+        case .calmingNotifications:
+            cell.setupCellUI(position: .center,
+                             text: module.title,
+                             textColor: module.titleColor.color(),
+                             image: module.image)
+        }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        guard let header = collectionView.dequeueReusableSupplementaryView(
-            ofKind: UICollectionView.elementKindSectionHeader,
-            withReuseIdentifier: MainCollectionHeaderReusableView_ME.identifier,
-            for: indexPath) as? MainCollectionHeaderReusableView_ME else {
-                fatalError()
-            }
-        headerConfigurator.configure(header)
-        header.viewDidLoad()
-        return header
+        switch kind {
+        case UICollectionView.elementKindSectionHeader:
+           guard let header = collectionView.dequeueReusableSupplementaryView(
+                ofKind: UICollectionView.elementKindSectionHeader,
+                withReuseIdentifier: MainCollectionHeaderReusableView_ME.identifier,
+                for: indexPath) as? MainCollectionHeaderReusableView_ME else { fatalError()
+                }
+            headerConfigurator.configure(header)
+            header.viewDidLoad()
+            return header
+            
+        case UICollectionView.elementKindSectionFooter:
+            guard let footer = collectionView.dequeueReusableSupplementaryView(
+                ofKind: UICollectionView.elementKindSectionFooter,
+                withReuseIdentifier: MainCollectionFooterReusableView_ME.identifier,
+                for: indexPath) as? MainCollectionFooterReusableView_ME else { fatalError()
+                }
+            footerConfigurator.configure(footer)
+            footer.viewDidLoad()
+            return footer
+            
+        default:
+            assert(false, "Unexpected element kind")
+        }
     }
     
     
     // MARK: - Collection Delegate
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("didSelectItemAt")
         viewModel.didSelectItem(index: indexPath.row)
     }
     
+
     
-    // MARK: - Priivate UI
-    
-    private func initialUISetup() {
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.topItem?.title = "#мамавыдохни"
-        navigationController?.navigationBar.topItem?.rightBarButtonItem = userNavBarButton
-    }
 }
+
+
 
