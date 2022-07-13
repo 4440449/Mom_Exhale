@@ -11,4 +11,12 @@ import UIKit
 final class HeaderCollectionViewCell_ME: UICollectionViewCell {
     
     static let identifier = String(describing: HeaderCollectionViewCell_ME.self)
+    
+    override var isHighlighted: Bool {
+      didSet {
+        UIView.animate(withDuration: 0.2) {
+            self.alpha = self.isHighlighted ? 0.6 : 1
+        }
+      }
+    }
 }
