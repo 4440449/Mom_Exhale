@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		946AF5BA2871CA560047E508 /* BabyTrackerModule in Frameworks */ = {isa = PBXBuildFile; productRef = 946AF5B92871CA560047E508 /* BabyTrackerModule */; };
+		946AF5CC2872E34D0047E508 /* BabyTrackerModule in Frameworks */ = {isa = PBXBuildFile; productRef = 946AF5CB2872E34D0047E508 /* BabyTrackerModule */; };
+		946AF5D02872EFF60047E508 /* CalmingNotificationsModule in Frameworks */ = {isa = PBXBuildFile; productRef = 946AF5CF2872EFF60047E508 /* CalmingNotificationsModule */; };
+		946AF5D22872EFFB0047E508 /* SamoprikormModule in Frameworks */ = {isa = PBXBuildFile; productRef = 946AF5D12872EFFB0047E508 /* SamoprikormModule */; };
 		94A50DD9286F501B00C2C246 /* SceneState_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A50DD8286F501B00C2C246 /* SceneState_ME.swift */; };
 		94A50DDA286F501B00C2C246 /* SceneState_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A50DD8286F501B00C2C246 /* SceneState_ME.swift */; };
-		94A50DDD286F551200C2C246 /* CalmingNotificationsModule in Frameworks */ = {isa = PBXBuildFile; productRef = 94A50DDC286F551200C2C246 /* CalmingNotificationsModule */; };
 		94AB0CC1286A50C200742A33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AB0CC0286A50C200742A33 /* AppDelegate.swift */; };
 		94AB0CC3286A50C200742A33 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AB0CC2286A50C200742A33 /* SceneDelegate.swift */; };
 		94AB0CC5286A50C200742A33 /* MainViewController_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AB0CC4286A50C200742A33 /* MainViewController_ME.swift */; };
@@ -74,10 +75,12 @@
 		94B0D1CB286EE5D20006899B /* HeaderCollectionViewCell_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B0D1C9286EE5D20006899B /* HeaderCollectionViewCell_ME.swift */; };
 		94B0D1CE286EFCB40006899B /* Test_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B0D1CD286EFCB40006899B /* Test_ME.swift */; };
 		94B0D1CF286EFCB40006899B /* Test_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B0D1CD286EFCB40006899B /* Test_ME.swift */; };
-		94B0D1D7286F150E0006899B /* SamoprikormModule in Frameworks */ = {isa = PBXBuildFile; productRef = 94B0D1D6286F150E0006899B /* SamoprikormModule */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		946AF5CA2872E22E0047E508 /* BabyTrackerModule */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = BabyTrackerModule; path = ../BabyTrackerModule; sourceTree = "<group>"; };
+		946AF5CD2872EFE10047E508 /* CalmingNotificationsModule */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = CalmingNotificationsModule; path = ../CalmingNotificationsModule; sourceTree = "<group>"; };
+		946AF5CE2872EFEB0047E508 /* SamoprikormModule */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SamoprikormModule; path = ../SamoprikormModule; sourceTree = "<group>"; };
 		94A50DD8286F501B00C2C246 /* SceneState_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneState_ME.swift; sourceTree = "<group>"; };
 		94AB0CBD286A50C200742A33 /* Mom_Exhale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mom_Exhale.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94AB0CC0286A50C200742A33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -131,23 +134,34 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94A50DDD286F551200C2C246 /* CalmingNotificationsModule in Frameworks */,
 				94B0D17A286C79C00006899B /* BabyNet in Frameworks */,
-				946AF5BA2871CA560047E508 /* BabyTrackerModule in Frameworks */,
+				946AF5D02872EFF60047E508 /* CalmingNotificationsModule in Frameworks */,
+				946AF5CC2872E34D0047E508 /* BabyTrackerModule in Frameworks */,
 				94B0D178286C79BD0006899B /* MommysEye in Frameworks */,
-				94B0D1D7286F150E0006899B /* SamoprikormModule in Frameworks */,
+				946AF5D22872EFFB0047E508 /* SamoprikormModule in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		946AF5C92872E22E0047E508 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				946AF5CA2872E22E0047E508 /* BabyTrackerModule */,
+				946AF5CD2872EFE10047E508 /* CalmingNotificationsModule */,
+				946AF5CE2872EFEB0047E508 /* SamoprikormModule */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
 		94AB0CB4286A50C200742A33 = {
 			isa = PBXGroup;
 			children = (
 				94AB0CBF286A50C200742A33 /* Mom_Exhale */,
 				94AB0D17286C3F8400742A33 /* Mom_Exhale Root App Info.plist */,
 				94AB0CBE286A50C200742A33 /* Products */,
+				946AF5C92872E22E0047E508 /* Packages */,
 				94B0D1D5286F150E0006899B /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -436,7 +450,7 @@
 			isa = PBXGroup;
 			children = (
 				94AB0CD8286A532800742A33 /* MainCollectionHeaderReusableView_ME.swift */,
-				94B0D1CC286EE60A0006899B /* Header Cell */,
+				94B0D1CC286EE60A0006899B /* HeaderCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -458,12 +472,12 @@
 			path = Entity;
 			sourceTree = "<group>";
 		};
-		94B0D1CC286EE60A0006899B /* Header Cell */ = {
+		94B0D1CC286EE60A0006899B /* HeaderCell */ = {
 			isa = PBXGroup;
 			children = (
 				94B0D1C9286EE5D20006899B /* HeaderCollectionViewCell_ME.swift */,
 			);
-			path = "Header Cell";
+			path = HeaderCell;
 			sourceTree = "<group>";
 		};
 		94B0D1D0286EFCBD0006899B /* Test */ = {
@@ -521,9 +535,9 @@
 			packageProductDependencies = (
 				94B0D177286C79BD0006899B /* MommysEye */,
 				94B0D179286C79C00006899B /* BabyNet */,
-				94B0D1D6286F150E0006899B /* SamoprikormModule */,
-				94A50DDC286F551200C2C246 /* CalmingNotificationsModule */,
-				946AF5B92871CA560047E508 /* BabyTrackerModule */,
+				946AF5CB2872E34D0047E508 /* BabyTrackerModule */,
+				946AF5CF2872EFF60047E508 /* CalmingNotificationsModule */,
+				946AF5D12872EFFB0047E508 /* SamoprikormModule */,
 			);
 			productName = "Moms Exhale";
 			productReference = 94AB0D16286C3F8400742A33 /* Mom_Exhale Root App.app */;
@@ -556,9 +570,6 @@
 			packageReferences = (
 				94B0D171286C79910006899B /* XCRemoteSwiftPackageReference "MommysEye" */,
 				94B0D174286C799B0006899B /* XCRemoteSwiftPackageReference "BabyNet" */,
-				94B0D1D4286F14DA0006899B /* XCRemoteSwiftPackageReference "SamoprikormModule" */,
-				94A50DDB286F551200C2C246 /* XCRemoteSwiftPackageReference "CalmingNotificationsModule" */,
-				946AF5B82871CA560047E508 /* XCRemoteSwiftPackageReference "BabyTrackerModule" */,
 			);
 			productRefGroup = 94AB0CBE286A50C200742A33 /* Products */;
 			projectDirPath = "";
@@ -936,22 +947,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		946AF5B82871CA560047E508 /* XCRemoteSwiftPackageReference "BabyTrackerModule" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/4440449/BabyTrackerModule.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-		94A50DDB286F551200C2C246 /* XCRemoteSwiftPackageReference "CalmingNotificationsModule" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/4440449/CalmingNotificationsModule.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 		94B0D171286C79910006899B /* XCRemoteSwiftPackageReference "MommysEye" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/4440449/MommysEye";
@@ -968,26 +963,20 @@
 				kind = branch;
 			};
 		};
-		94B0D1D4286F14DA0006899B /* XCRemoteSwiftPackageReference "SamoprikormModule" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/4440449/SamoprikormModule.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		946AF5B92871CA560047E508 /* BabyTrackerModule */ = {
+		946AF5CB2872E34D0047E508 /* BabyTrackerModule */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 946AF5B82871CA560047E508 /* XCRemoteSwiftPackageReference "BabyTrackerModule" */;
 			productName = BabyTrackerModule;
 		};
-		94A50DDC286F551200C2C246 /* CalmingNotificationsModule */ = {
+		946AF5CF2872EFF60047E508 /* CalmingNotificationsModule */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 94A50DDB286F551200C2C246 /* XCRemoteSwiftPackageReference "CalmingNotificationsModule" */;
 			productName = CalmingNotificationsModule;
+		};
+		946AF5D12872EFFB0047E508 /* SamoprikormModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SamoprikormModule;
 		};
 		94B0D172286C79910006899B /* MommysEye */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -1008,11 +997,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 94B0D174286C799B0006899B /* XCRemoteSwiftPackageReference "BabyNet" */;
 			productName = BabyNet;
-		};
-		94B0D1D6286F150E0006899B /* SamoprikormModule */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 94B0D1D4286F14DA0006899B /* XCRemoteSwiftPackageReference "SamoprikormModule" */;
-			productName = SamoprikormModule;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

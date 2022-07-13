@@ -11,38 +11,11 @@
         }
       },
       {
-        "package": "BabyTrackerModule",
-        "repositoryURL": "https://github.com/4440449/BabyTrackerModule.git",
-        "state": {
-          "branch": "master",
-          "revision": "b7950cfea0ae331c83d0666b6ff535f26d42a9b1",
-          "version": null
-        }
-      },
-      {
-        "package": "CalmingNotificationsModule",
-        "repositoryURL": "https://github.com/4440449/CalmingNotificationsModule.git",
-        "state": {
-          "branch": "master",
-          "revision": "e656ec4d659b5db0b42a44b952057564b72b875d",
-          "version": null
-        }
-      },
-      {
         "package": "MommysEye",
         "repositoryURL": "https://github.com/4440449/MommysEye",
         "state": {
           "branch": "master",
           "revision": "a443a7adcbb664061094c5bf4221e8467bf54c54",
-          "version": null
-        }
-      },
-      {
-        "package": "SamoprikormModule",
-        "repositoryURL": "https://github.com/4440449/SamoprikormModule.git",
-        "state": {
-          "branch": "master",
-          "revision": "b8a5d1cdc9eb0ef17c28a278ebdca78bbbc64fc4",
           "version": null
         }
       }
