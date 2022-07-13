@@ -375,7 +375,7 @@
 			isa = PBXGroup;
 			children = (
 				94AB0CF6286B4B5900742A33 /* Module */,
-				94B0D1AB286DB2490006899B /* Banner */,
+				94B0D1AB286DB2490006899B /* BasicArticle */,
 				94D89B60287F631C00AE086F /* BlogArticle */,
 			);
 			path = Gateways;
@@ -447,13 +447,13 @@
 			path = Other;
 			sourceTree = "<group>";
 		};
-		94B0D1AB286DB2490006899B /* Banner */ = {
+		94B0D1AB286DB2490006899B /* BasicArticle */ = {
 			isa = PBXGroup;
 			children = (
 				94B0D1A8286DB2250006899B /* BasicArticleRepository_ME.swift */,
 				94B0D1C0286E439B0006899B /* Network */,
 			);
-			path = Banner;
+			path = BasicArticle;
 			sourceTree = "<group>";
 		};
 		94B0D1AF286DC2400006899B /* Network */ = {
