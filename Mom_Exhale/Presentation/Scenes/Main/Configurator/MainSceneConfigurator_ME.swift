@@ -18,8 +18,10 @@ final class MainSceneConfigurator_ME: SceneConfiguratorProtocol_ME {
                                          router: router)
         
         let headerConfigurator = MainHeaderConfigurator_ME(repositoryDIContainer: repositoryDIContainer)
+        let footerConfigurator = MainFooterConfigurator_ME(repositoryDIContainer: repositoryDIContainer)
         let vc = MainViewController_ME(viewModel: viewModel,
-                                       headerConfigurator: headerConfigurator)
+                                       headerConfigurator: headerConfigurator,
+                                       footerConfigurator: footerConfigurator)
         let navigationVC = UINavigationController(rootViewController: vc)
         navigationVC.navigationBar.standardAppearance.largeTitleTextAttributes = [.font : UIFont(name: "Montserrat-Black", size: 38)!]
         router.navigationContainer = navigationVC
