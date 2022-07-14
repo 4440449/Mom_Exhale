@@ -17,28 +17,30 @@ protocol MainHeaderViewModelProtocol_ME: AnyObject {
 
 
 final class MainHeaderViewModel_ME: MainHeaderViewModelProtocol_ME {
-
-        // MARK: - Dependencies
-
+    
+    // MARK: - Dependencies
+    
     private let repository: BasicArticleGateway_ME
     
     
     // MARK: - Init
-
+    
     init(repository: BasicArticleGateway_ME) {
         self.repository = repository
     }
     
     
     // MARK: - State
-
+    
     var basicArticles = Publisher(value: [BasicArticle_ME]())
     var isLoading = Publisher(value: false)
     
     
     // MARK: - Interface
-
+    
     func loadInitialState() {
+        guard basicArticles.value.isEmpty else { return }
+        print("basicArticles is loading")
         isLoading.value = true
         let _ = Task {
             do {

@@ -39,6 +39,8 @@ final class MainFooterViewModel_ME: MainFooterViewModelProtocol_ME {
     // MARK: - Interface
 
     func loadInitialState() {
+        guard blogArticles.value.isEmpty else { return }
+        print("blogArticles is loading")
         isLoading.value = true
         let _ = Task {
             do {

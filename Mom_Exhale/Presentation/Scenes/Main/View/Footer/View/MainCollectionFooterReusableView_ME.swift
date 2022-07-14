@@ -56,9 +56,12 @@ class MainCollectionFooterReusableView_ME: UICollectionReusableView,
     
     private func setupObservers() {
         viewModel?.blogArticles.subscribe(observer: self) { [weak self] articles in
-            self?.collection.reloadData()
-            self?.pageControl.numberOfPages = articles.count
+            guard let strongSelf = self else { return }
+            guard !articles.isEmpty else { return }
+            strongSelf.collection.reloadSections(IndexSet(integer: 0))
+            strongSelf.pageControl.numberOfPages = articles.count
         }
+        
         viewModel?.isLoading.subscribe(observer: self) { [weak self] isLoading in
             isLoading ? self?.activity.startAnimating() : self?.activity.stopAnimating()
         }
@@ -72,7 +75,11 @@ class MainCollectionFooterReusableView_ME: UICollectionReusableView,
                                           collectionViewLayout: setupCollectionViewLayout())
         collection.register(FooterCollectionViewCell_ME.self,
                             forCellWithReuseIdentifier: FooterCollectionViewCell_ME.identifier)
-        collection.layer.cornerRadius = 15
+        collection.backgroundColor = UIColor(named: "background")
+        collection.layer.cornerRadius = 16
+        collection.layer.borderWidth = 1
+        collection.layer.borderColor = UIColor(named: "FooterBorderColor")?.cgColor
+        collection.isPrefetchingEnabled = false
         collection.dataSource = self
         collection.delegate = self
         return collection
@@ -103,8 +110,8 @@ class MainCollectionFooterReusableView_ME: UICollectionReusableView,
         let control = UIPageControl()
         control.numberOfPages = 0
         control.currentPage = 0
-        control.pageIndicatorTintColor = .systemGray4
-        control.currentPageIndicatorTintColor = .systemGray
+        control.pageIndicatorTintColor = UIColor(named: "FooterPageIndicator")
+        control.currentPageIndicatorTintColor = UIColor(named: "FooterCurrentPageIndicator")
         control.translatesAutoresizingMaskIntoConstraints = false
         return control
     }()
@@ -113,15 +120,11 @@ class MainCollectionFooterReusableView_ME: UICollectionReusableView,
     // MARK: - Initital UI
     
     private func setupInitialUI() {
-        self.collection.backgroundColor = UIColor(named: "background")
         self.layer.shadowColor = UIColor(named: "bottomShadowColor")?.cgColor
         self.layer.shadowRadius = 10
         self.layer.shadowOpacity = 1
         self.layer.shadowOffset = CGSize(width: 5, height: 7)
         self.layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
-        self.layer.borderColor = UIColor(named: "FooterBorderColor")?.cgColor
-        self.layer.borderWidth = 1
-        self.layer.cornerRadius = 15
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -129,7 +132,7 @@ class MainCollectionFooterReusableView_ME: UICollectionReusableView,
         if traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) {
             print("Fotter shadowColor has been changed")
             self.layer.shadowColor = UIColor(named: "bottomShadowColor")?.cgColor
-            self.layer.borderColor = UIColor(named: "FooterBorderColor")?.cgColor
+            collection.layer.borderColor = UIColor(named: "FooterBorderColor")?.cgColor
         }
     }
     
@@ -173,11 +176,15 @@ class MainCollectionFooterReusableView_ME: UICollectionReusableView,
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FooterCollectionViewCell_ME.identifier, for: indexPath) as? FooterCollectionViewCell_ME else {
             fatalError()
         }
-        if let title = viewModel?.blogArticles.value[indexPath.row].title {
-            cell.setupCellUI(text: title)
-        }
-        //        let colorsArr: [UIColor] = [.red, .green, .magenta, .blue, .tintColor, .brown, .cyan]
-        //        cell.backgroundColor = colorsArr.randomElement()
+        guard let vm = viewModel else { return cell }
+        
+        // TODO: numberOfItemsInSection correct calls
+//        guard vm.blogArticles.value.indices.contains(indexPath.row) else { return cell }
+//        guard vm.blogArticles.value.count > 0 else { return cell }
+        
+        let title = vm.blogArticles.value[indexPath.row].title
+        cell.setupCellUI(text: title)
+        
         return cell
     }
     

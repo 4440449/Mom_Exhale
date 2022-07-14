@@ -54,9 +54,12 @@ class MainCollectionHeaderReusableView_ME: UICollectionReusableView,
     
     private func setupObservers() {
         viewModel?.basicArticles.subscribe(observer: self) { [weak self] articles in
-            self?.collection.reloadData()
-            self?.pageControl.numberOfPages = articles.count
+            guard let strongSelf = self else { return }
+            guard !articles.isEmpty else { return }
+            strongSelf.collection.reloadSections(IndexSet(integer: 0))
+            strongSelf.pageControl.numberOfPages = articles.count
         }
+        
         viewModel?.isLoading.subscribe(observer: self) { [weak self] isLoading in
             isLoading ? self?.activity.startAnimating() : self?.activity.stopAnimating()
         }
@@ -70,7 +73,16 @@ class MainCollectionHeaderReusableView_ME: UICollectionReusableView,
                                           collectionViewLayout: setupCollectionViewLayout())
         collection.register(HeaderCollectionViewCell_ME.self,
                             forCellWithReuseIdentifier: HeaderCollectionViewCell_ME.identifier)
-        collection.layer.cornerRadius = 15
+        //TODO: - collection backgroundColor gradient
+        let c1 = UIColor(red: 0.968, green: 0.711, blue: 0.559, alpha: 1)
+        let c2 = UIColor(red: 0.988, green: 0.795, blue: 0.619, alpha: 1)
+        collection.setGradientBackground(fromColor: c1, toColor: c2,
+                                         location1: 0, location2: 1,
+                                         startPoint: CGPoint(x: 0, y: 1), endPoint: CGPoint(x: 1, y: 1))
+        collection.layer.cornerRadius = 16
+        collection.layer.borderWidth = 1
+        collection.layer.borderColor = UIColor(named: "HeaderBorderColor")?.cgColor
+        collection.isPrefetchingEnabled = false
         collection.dataSource = self
         collection.delegate = self
         return collection
@@ -101,8 +113,8 @@ class MainCollectionHeaderReusableView_ME: UICollectionReusableView,
         let control = UIPageControl()
         control.numberOfPages = 0
         control.currentPage = 0
-        control.pageIndicatorTintColor = .systemGray4
-        control.currentPageIndicatorTintColor = .systemGray
+        control.pageIndicatorTintColor = UIColor(named: "HeaderPageIndicator")
+        control.currentPageIndicatorTintColor = UIColor(named: "HeaderCurrentPageIndicator")
         control.translatesAutoresizingMaskIntoConstraints = false
         return control
     }()
@@ -111,21 +123,18 @@ class MainCollectionHeaderReusableView_ME: UICollectionReusableView,
     // MARK: - Initital UI
     
     private func setupInitialUI() {
-        //TODO: - shadowColor handling!
-        //TODO: - stroke croner radius!
         self.layer.shadowColor = UIColor(named: "bottomShadowColor")?.cgColor
         self.layer.shadowRadius = 10
         self.layer.shadowOpacity = 1
         self.layer.shadowOffset = CGSize(width: 5, height: 7)
         self.layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
-        self.layer.cornerRadius = 15
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         if traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) {
-            print("Header shadowColor has been changed")
             self.layer.shadowColor = UIColor(named: "bottomShadowColor")?.cgColor
+            collection.layer.borderColor = UIColor(named: "HeaderBorderColor")?.cgColor
         }
     }
     
@@ -162,6 +171,7 @@ class MainCollectionHeaderReusableView_ME: UICollectionReusableView,
     // MARK: - Collection Data source
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print("numberOfItemsInSection == \(viewModel?.basicArticles.value.count ?? 0)")
         return viewModel?.basicArticles.value.count ?? 0
     }
     
@@ -169,12 +179,20 @@ class MainCollectionHeaderReusableView_ME: UICollectionReusableView,
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HeaderCollectionViewCell_ME.identifier, for: indexPath) as? HeaderCollectionViewCell_ME else {
             fatalError()
         }
-        if let title = viewModel?.basicArticles.value[indexPath.row].title {
-            cell.setupCellUI(text: title)
-        }
-        //        let colorsArr: [UIColor] = [.red, .green, .magenta, .blue, .tintColor, .brown, .cyan]
-        //        cell.backgroundColor = colorsArr.randomElement()
+        print(" ----- basicArticles.value.count == \(viewModel!.basicArticles.value.count)")
+        print("indexPath.row == \(indexPath.row) ------")
+        
+        guard let vm = viewModel else { return cell }
+        
+        // TODO: numberOfItemsInSection correct calls
+//        guard vm.basicArticles.value.indices.contains(indexPath.row) else { return cell }
+        //        guard vm.basicArticles.value.count > 0 else { return cell }
+        
+        let title = vm.basicArticles.value[indexPath.row].title
+        cell.setupCellUI(text: title)
+        
         return cell
     }
     
 }
+
