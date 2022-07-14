@@ -36,7 +36,7 @@ final class BlogArticleNetworkRepository_ME: BlogArticleNetworkRepositoryProtoco
     func fetch(responseCallback: @escaping (Result<[BlogArticleNetworkEntity_ME], Error>) -> ()) -> URLSessionTask? {
         let url = BabyNetURL(scheme: .https,
                              host: "sruvmguuadrikxjglriw.supabase.co",
-                             path: "/rest/v1/Banners",
+                             path: "/rest/v1/BlogArticles",
                              endPoint: nil)
         let request = BabyNetRequest(method: .get,
                                      header: ["apiKey" : apiKey],
