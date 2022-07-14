@@ -51,7 +51,7 @@ final class HeaderCollectionViewCell_ME: UICollectionViewCell {
 
     private func setupLayout() {
         articleTitleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor,
-                                             constant: 10).isActive = true
+                                             constant: 12).isActive = true
         articleTitleLabel.trailingAnchor.constraint(lessThanOrEqualTo: self.trailingAnchor, constant: -5).isActive = true
         articleTitleLabel.topAnchor.constraint(equalTo: self.centerYAnchor, constant: 0).isActive = true
     }
