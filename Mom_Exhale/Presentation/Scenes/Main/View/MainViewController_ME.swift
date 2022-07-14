@@ -44,6 +44,7 @@ class MainViewController_ME: UIViewController,
         view.addSubview(collection)
         view.addSubview(activity)
         setupInitialUI()
+        setupLayout()
         setupObservers()
         viewModel.loadInitialState()
     }
@@ -53,7 +54,8 @@ class MainViewController_ME: UIViewController,
     
     func setupObservers() {
         viewModel.modules.subscribe(observer: self) { [weak self] modules in
-            self?.collection.reloadData()
+            guard let strongSelf = self else { return }
+            strongSelf.collection.reloadSections(IndexSet(integer: 0))
         }
         
         viewModel.isLoading.subscribe(observer: self) { [weak self] isLoading in
@@ -102,6 +104,7 @@ class MainViewController_ME: UIViewController,
         collection.alwaysBounceVertical = true
         collection.showsVerticalScrollIndicator = false
         collection.backgroundColor = UIColor(named: "background")
+        collection.isPrefetchingEnabled = false
         collection.dataSource = self
         collection.delegate = self
       
@@ -136,8 +139,14 @@ class MainViewController_ME: UIViewController,
     private func setupInitialUI() {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.topItem?.rightBarButtonItem = userNavBarButton
-        self.navigationController?.navigationBar.addSubview(logo1Label)
-        self.navigationController?.navigationBar.addSubview(logo2Label)
+        navigationController?.navigationBar.addSubview(logo1Label)
+        navigationController?.navigationBar.addSubview(logo2Label)
+    }
+    
+    
+    // MARK: - Layout
+    
+    private func setupLayout() {
         logo1Label.centerXAnchor.constraint(equalTo: self.navigationController!.navigationBar.centerXAnchor).isActive = true
         logo1Label.topAnchor.constraint(greaterThanOrEqualTo: self.navigationController!.navigationBar.topAnchor, constant: 20).isActive = true
         logo2Label.centerXAnchor.constraint(equalTo: self.navigationController!.navigationBar.centerXAnchor).isActive = true
@@ -146,9 +155,34 @@ class MainViewController_ME: UIViewController,
     }
     
     
-    // MARK: - Layout
+    //CollectionView
+    
+    enum Section: Int, CaseIterable {
+            case header
+            case grid
+            case footer
+
+            var columnCount: Int {
+                switch self {
+                case .header:
+                    return 1
+                case .grid:
+                    return 2
+                case .footer:
+                    return 1
+                }
+            }
+        }
     
     private func setupCollectionViewLayout() -> UICollectionViewCompositionalLayout {
+        
+//        let headerLayout = UICollectionViewCompositionalLayout { section, env in
+//            <#code#>
+//        }
+        
+        
+        
+        
         let leadingItemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),heightDimension: .fractionalHeight(0.5))
         let leadingItem = NSCollectionLayoutItem(layoutSize: leadingItemSize)
         leadingItem.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
@@ -178,13 +212,17 @@ class MainViewController_ME: UIViewController,
         
         let section = NSCollectionLayoutSection(group: group)
         section.boundarySupplementaryItems = [header, footer]
-        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 30, bottom: 10, trailing: 30)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 25, bottom: 10, trailing: 25)
         
         return UICollectionViewCompositionalLayout(section: section)
     }
     
     
     // MARK: - Collection Data source
+    
+//    func numberOfSections(in collectionView: UICollectionView) -> Int {
+//        3
+//    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.modules.value.count
@@ -255,3 +293,39 @@ class MainViewController_ME: UIViewController,
 
 
 
+
+
+//private func setupCollectionViewLayout() -> UICollectionViewCompositionalLayout {
+//    let leadingItemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),heightDimension: .fractionalHeight(0.5))
+//    let leadingItem = NSCollectionLayoutItem(layoutSize: leadingItemSize)
+//    leadingItem.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
+//
+//    let leadingGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5),heightDimension: .fractionalHeight(1))
+//    let leadingGroup = NSCollectionLayoutGroup.vertical(layoutSize: leadingGroupSize, subitems: [leadingItem])
+//
+//    let trailingItemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5),heightDimension: .fractionalHeight(1))
+//    let trailingItem = NSCollectionLayoutItem(layoutSize: trailingItemSize)
+//    trailingItem.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
+//
+//    let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+//                                           heightDimension: .fractionalHeight(0.4))
+//    let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [leadingGroup, trailingItem])
+//
+//    let header = NSCollectionLayoutBoundarySupplementaryItem(
+//        layoutSize: .init(widthDimension: .fractionalWidth(1),
+//                          heightDimension: .fractionalHeight(0.17)),
+//        elementKind: UICollectionView.elementKindSectionHeader,
+//        alignment: .top)
+//
+//    let footer = NSCollectionLayoutBoundarySupplementaryItem(
+//        layoutSize: .init(widthDimension: .fractionalWidth(1),
+//                          heightDimension: .fractionalHeight(0.17)),
+//        elementKind: UICollectionView.elementKindSectionFooter,
+//        alignment: .bottom)
+//
+//    let section = NSCollectionLayoutSection(group: group)
+//    section.boundarySupplementaryItems = [header, footer]
+//    section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 25, bottom: 10, trailing: 25)
+//
+//    return UICollectionViewCompositionalLayout(section: section)
+//}
