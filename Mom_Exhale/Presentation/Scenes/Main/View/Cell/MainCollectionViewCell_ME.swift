@@ -50,14 +50,23 @@ class MainCollectionViewCell_ME: UICollectionViewCell {
     // MARK: - Initital UI
 
     func setupInitialUI() {
-        self.backgroundColor = .white
+//        self.backgroundColor = .white
         self.layer.cornerRadius = 19
         //TODO: shadow color
-        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowColor = UIColor(named: "bottomShadowColor")?.cgColor
         self.layer.shadowRadius = 10
-        self.layer.shadowOpacity = 0.1
+        self.layer.shadowOpacity = 1
+        self.layer.shadowOffset = CGSize(width: 5, height: 7)
         self.layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
-        contentView.layer.cornerRadius = 18
+//        contentView.layer.cornerRadius = 18
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        if traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) {
+            print("Cells shadowColor has been changed")
+            self.layer.shadowColor = UIColor(named: "bottomShadowColor")?.cgColor
+        }
     }
     
 

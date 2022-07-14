@@ -113,11 +113,20 @@ class MainCollectionHeaderReusableView_ME: UICollectionReusableView,
     private func setupInitialUI() {
         //TODO: - shadowColor handling!
         //TODO: - stroke croner radius!
-        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowColor = UIColor(named: "bottomShadowColor")?.cgColor
         self.layer.shadowRadius = 10
-        self.layer.shadowOpacity = 0.1
+        self.layer.shadowOpacity = 1
+        self.layer.shadowOffset = CGSize(width: 5, height: 7)
         self.layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
         self.layer.cornerRadius = 15
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        if traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) {
+            print("Header shadowColor has been changed")
+            self.layer.shadowColor = UIColor(named: "bottomShadowColor")?.cgColor
+        }
     }
     
     
@@ -160,8 +169,9 @@ class MainCollectionHeaderReusableView_ME: UICollectionReusableView,
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HeaderCollectionViewCell_ME.identifier, for: indexPath) as? HeaderCollectionViewCell_ME else {
             fatalError()
         }
-        let title = viewModel?.basicArticles.value[indexPath.row].title ?? ""
-        cell.setupCellUI(text: title)
+        if let title = viewModel?.basicArticles.value[indexPath.row].title {
+            cell.setupCellUI(text: title)
+        }
         //        let colorsArr: [UIColor] = [.red, .green, .magenta, .blue, .tintColor, .brown, .cyan]
         //        cell.backgroundColor = colorsArr.randomElement()
         return cell

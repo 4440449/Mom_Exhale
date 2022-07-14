@@ -113,12 +113,24 @@ class MainCollectionFooterReusableView_ME: UICollectionReusableView,
     // MARK: - Initital UI
     
     private func setupInitialUI() {
-        self.backgroundColor = .white
-        self.layer.shadowColor = UIColor.black.cgColor
+        self.collection.backgroundColor = UIColor(named: "background")
+        self.layer.shadowColor = UIColor(named: "bottomShadowColor")?.cgColor
         self.layer.shadowRadius = 10
-        self.layer.shadowOpacity = 0.1
+        self.layer.shadowOpacity = 1
+        self.layer.shadowOffset = CGSize(width: 5, height: 7)
         self.layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
+        self.layer.borderColor = UIColor(named: "FooterBorderColor")?.cgColor
+        self.layer.borderWidth = 1
         self.layer.cornerRadius = 15
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        if traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) {
+            print("Fotter shadowColor has been changed")
+            self.layer.shadowColor = UIColor(named: "bottomShadowColor")?.cgColor
+            self.layer.borderColor = UIColor(named: "FooterBorderColor")?.cgColor
+        }
     }
     
     
@@ -161,11 +173,11 @@ class MainCollectionFooterReusableView_ME: UICollectionReusableView,
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FooterCollectionViewCell_ME.identifier, for: indexPath) as? FooterCollectionViewCell_ME else {
             fatalError()
         }
-        let title = viewModel?.blogArticles.value[indexPath.row].title ?? ""
-        cell.setupCellUI(text: title)
+        if let title = viewModel?.blogArticles.value[indexPath.row].title {
+            cell.setupCellUI(text: title)
+        }
         //        let colorsArr: [UIColor] = [.red, .green, .magenta, .blue, .tintColor, .brown, .cyan]
         //        cell.backgroundColor = colorsArr.randomElement()
-        
         return cell
     }
     
