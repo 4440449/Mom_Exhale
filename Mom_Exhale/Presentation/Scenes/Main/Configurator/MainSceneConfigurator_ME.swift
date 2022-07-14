@@ -17,8 +17,13 @@ final class MainSceneConfigurator_ME: SceneConfiguratorProtocol_ME {
         let viewModel = MainViewModel_ME(repository: moduleRepository,
                                          router: router)
         
-        let headerConfigurator = MainHeaderConfigurator_ME(repositoryDIContainer: repositoryDIContainer)
-        let footerConfigurator = MainFooterConfigurator_ME(repositoryDIContainer: repositoryDIContainer)
+        let headerViewModel = MainHeaderViewModel_ME(repository: repositoryDIContainer.basicArticle)
+        let footerViewModel = MainFooterViewModel_ME(repository: repositoryDIContainer.blogArticle)
+        
+        let headerConfigurator = MainHeaderConfigurator_ME(headerViewModel: headerViewModel)
+        let footerConfigurator = MainFooterConfigurator_ME(footerViewModel: footerViewModel)
+//        let headerConfigurator = MainHeaderConfigurator_ME(repositoryDIContainer: repositoryDIContainer)
+//        let footerConfigurator = MainFooterConfigurator_ME(repositoryDIContainer: repositoryDIContainer)
         let vc = MainViewController_ME(viewModel: viewModel,
                                        headerConfigurator: headerConfigurator,
                                        footerConfigurator: footerConfigurator)

@@ -14,21 +14,24 @@ final class MainFooterConfigurator_ME: MainFooterConfiguratorProtocol_ME {
     
     // MARK: - Dependencies
 
-    private let repositoryDIContainer: GatewaysRepositoryDIContainerProtocol_ME
-    
+//    private let repositoryDIContainer: GatewaysRepositoryDIContainerProtocol_ME
+    private let footerViewModel: MainFooterViewModelProtocol_ME
     
     // MARK: - Init
 
-    init(repositoryDIContainer: GatewaysRepositoryDIContainerProtocol_ME) {
-        self.repositoryDIContainer = repositoryDIContainer
+    init(footerViewModel: MainFooterViewModelProtocol_ME
+//        repositoryDIContainer: GatewaysRepositoryDIContainerProtocol_ME
+    ) {
+        self.footerViewModel = footerViewModel
+//        self.repositoryDIContainer = repositoryDIContainer
     }
     
     
     // MARK: - Interface
 
     func configure(_ footer: MainCollectionFooterReusableView_ME) {
-        let blogArticleRepository = repositoryDIContainer.blogArticle
-        let viewModel = MainFooterViewModel_ME(repository: blogArticleRepository)
-        footer.setupViewModel(viewModel)
+//        let blogArticleRepository = repositoryDIContainer.blogArticle
+//        let viewModel = MainFooterViewModel_ME(repository: blogArticleRepository)
+        footer.setupViewModel(footerViewModel)
     }
 }
