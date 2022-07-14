@@ -32,7 +32,6 @@ final class BlogArticleNetworkRepository_ME: BlogArticleNetworkRepositoryProtoco
     
     // MARK: - Interface
 
-    //TODO: - ENDPOINT!
     func fetch(responseCallback: @escaping (Result<[BlogArticleNetworkEntity_ME], Error>) -> ()) -> URLSessionTask? {
         let url = BabyNetURL(scheme: .https,
                              host: "sruvmguuadrikxjglriw.supabase.co",
