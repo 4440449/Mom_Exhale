@@ -39,8 +39,8 @@ final class HeaderCollectionViewCell_ME: UICollectionViewCell {
     private lazy var articleTitleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Montserrat-Bold", size: 17)!
-        label.textColor = .label
-        label.numberOfLines = 0
+        label.textColor = .black
+        label.numberOfLines = 3
         label.textAlignment = .left
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -50,10 +50,9 @@ final class HeaderCollectionViewCell_ME: UICollectionViewCell {
     // MARK: - Layout
 
     private func setupLayout() {
-        articleTitleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor,
-                                             constant: 12).isActive = true
+        articleTitleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 12).isActive = true
         articleTitleLabel.trailingAnchor.constraint(lessThanOrEqualTo: self.trailingAnchor, constant: -5).isActive = true
-        articleTitleLabel.topAnchor.constraint(equalTo: self.centerYAnchor, constant: 0).isActive = true
+        articleTitleLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 10).isActive = true
     }
     
     
