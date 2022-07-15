@@ -40,7 +40,6 @@ final class MainHeaderViewModel_ME: MainHeaderViewModelProtocol_ME {
     
     func loadInitialState() {
         guard basicArticles.value.isEmpty else { return }
-        print("basicArticles is loading")
         isLoading.value = true
         let _ = Task {
             do {
