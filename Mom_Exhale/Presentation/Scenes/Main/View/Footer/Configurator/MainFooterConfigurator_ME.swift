@@ -6,7 +6,7 @@
 //
 
 protocol MainFooterConfiguratorProtocol_ME {
-    func configure(_ footer: MainCollectionFooterReusableView_ME)
+    func configure(_ footer: MainCollectionFooterCellView_ME)
 }
 
 
@@ -14,24 +14,18 @@ final class MainFooterConfigurator_ME: MainFooterConfiguratorProtocol_ME {
     
     // MARK: - Dependencies
 
-//    private let repositoryDIContainer: GatewaysRepositoryDIContainerProtocol_ME
     private let footerViewModel: MainFooterViewModelProtocol_ME
     
     // MARK: - Init
 
-    init(footerViewModel: MainFooterViewModelProtocol_ME
-//        repositoryDIContainer: GatewaysRepositoryDIContainerProtocol_ME
-    ) {
+    init(footerViewModel: MainFooterViewModelProtocol_ME) {
         self.footerViewModel = footerViewModel
-//        self.repositoryDIContainer = repositoryDIContainer
     }
     
     
     // MARK: - Interface
 
-    func configure(_ footer: MainCollectionFooterReusableView_ME) {
-//        let blogArticleRepository = repositoryDIContainer.blogArticle
-//        let viewModel = MainFooterViewModel_ME(repository: blogArticleRepository)
+    func configure(_ footer: MainCollectionFooterCellView_ME) {
         footer.setupViewModel(footerViewModel)
     }
 }
