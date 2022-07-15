@@ -7,13 +7,13 @@
 
 import UIKit
 
-class MainCollectionHeaderReusableView_ME: UICollectionReusableView,
-                                           UICollectionViewDelegate,
-                                           UICollectionViewDataSource {
+class MainCollectionHeaderCellView_ME: UICollectionViewCell,
+                                       UICollectionViewDelegate,
+                                       UICollectionViewDataSource {
     
     // MARK: - Static
     
-    static let identifier = String(describing: MainCollectionHeaderReusableView_ME.self)
+    static let identifier = String(describing: MainCollectionHeaderCellView_ME.self)
     
     
     // MARK: - Dependencies
@@ -179,18 +179,10 @@ class MainCollectionHeaderReusableView_ME: UICollectionReusableView,
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HeaderCollectionViewCell_ME.identifier, for: indexPath) as? HeaderCollectionViewCell_ME else {
             fatalError()
         }
-        print(" ----- basicArticles.value.count == \(viewModel!.basicArticles.value.count)")
-        print("indexPath.row == \(indexPath.row) ------")
-        
+        print(" \n ----- basicArticles.value.count == \(viewModel!.basicArticles.value.count) indexPath.row == \(indexPath.row) ------ \n")
         guard let vm = viewModel else { return cell }
-        
-        // TODO: numberOfItemsInSection correct calls
-//        guard vm.basicArticles.value.indices.contains(indexPath.row) else { return cell }
-        //        guard vm.basicArticles.value.count > 0 else { return cell }
-        
         let title = vm.basicArticles.value[indexPath.row].title
         cell.setupCellUI(text: title)
-        
         return cell
     }
     

@@ -18,7 +18,7 @@
 		94AB0CCA286A50C300742A33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94AB0CC9286A50C300742A33 /* Assets.xcassets */; };
 		94AB0CCD286A50C300742A33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94AB0CCB286A50C300742A33 /* LaunchScreen.storyboard */; };
 		94AB0CD6286A527800742A33 /* MainCollectionViewCell_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AB0CD5286A527800742A33 /* MainCollectionViewCell_ME.swift */; };
-		94AB0CD9286A532800742A33 /* MainCollectionHeaderReusableView_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AB0CD8286A532800742A33 /* MainCollectionHeaderReusableView_ME.swift */; };
+		94AB0CD9286A532800742A33 /* MainCollectionHeaderCellView_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AB0CD8286A532800742A33 /* MainCollectionHeaderCellView_ME.swift */; };
 		94AB0CDE286B457F00742A33 /* Module_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AB0CDD286B457F00742A33 /* Module_ME.swift */; };
 		94AB0CE3286B45BB00742A33 /* ModuleGateway_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AB0CE2286B45BB00742A33 /* ModuleGateway_ME.swift */; };
 		94AB0CE5286B462800742A33 /* BasicArticle_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AB0CE4286B462800742A33 /* BasicArticle_ME.swift */; };
@@ -27,7 +27,7 @@
 		94AB0CF2286B48FA00742A33 /* MainSceneConfigurator_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AB0CF1286B48FA00742A33 /* MainSceneConfigurator_ME.swift */; };
 		94AB0CF5286B49EA00742A33 /* ModuleRepository_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AB0CF4286B49EA00742A33 /* ModuleRepository_ME.swift */; };
 		94AB0CFD286B696A00742A33 /* AppModuleConfigurator_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AB0CFC286B696A00742A33 /* AppModuleConfigurator_ME.swift */; };
-		94AB0D01286C3F8400742A33 /* MainCollectionHeaderReusableView_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AB0CD8286A532800742A33 /* MainCollectionHeaderReusableView_ME.swift */; };
+		94AB0D01286C3F8400742A33 /* MainCollectionHeaderCellView_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AB0CD8286A532800742A33 /* MainCollectionHeaderCellView_ME.swift */; };
 		94AB0D02286C3F8400742A33 /* AppModuleConfigurator_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AB0CFC286B696A00742A33 /* AppModuleConfigurator_ME.swift */; };
 		94AB0D03286C3F8400742A33 /* BasicArticle_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AB0CE4286B462800742A33 /* BasicArticle_ME.swift */; };
 		94AB0D04286C3F8400742A33 /* Module_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AB0CDD286B457F00742A33 /* Module_ME.swift */; };
@@ -94,8 +94,8 @@
 		94F37E1D287EC1A700DF6433 /* Montserrat-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 94B0D192286C9F4C0006899B /* Montserrat-ExtraBold.ttf */; };
 		94F37E1E287EC1A900DF6433 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 94B0D194286C9F4C0006899B /* Montserrat-Bold.ttf */; };
 		94F37E1F287EC1AB00DF6433 /* Montserrat-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 94B0D190286C9F4C0006899B /* Montserrat-Black.ttf */; };
-		94F37E21287ECC4C00DF6433 /* MainCollectionFooterReusableView_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F37E20287ECC4C00DF6433 /* MainCollectionFooterReusableView_ME.swift */; };
-		94F37E22287ECC4C00DF6433 /* MainCollectionFooterReusableView_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F37E20287ECC4C00DF6433 /* MainCollectionFooterReusableView_ME.swift */; };
+		94F37E21287ECC4C00DF6433 /* MainCollectionFooterCellView_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F37E20287ECC4C00DF6433 /* MainCollectionFooterCellView_ME.swift */; };
+		94F37E22287ECC4C00DF6433 /* MainCollectionFooterCellView_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F37E20287ECC4C00DF6433 /* MainCollectionFooterCellView_ME.swift */; };
 		94F37E25287ECCA300DF6433 /* FooterCollectionViewCell_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F37E24287ECCA300DF6433 /* FooterCollectionViewCell_ME.swift */; };
 		94F37E26287ECCA300DF6433 /* FooterCollectionViewCell_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F37E24287ECCA300DF6433 /* FooterCollectionViewCell_ME.swift */; };
 		94F37E2A287ECE0200DF6433 /* MainFooterConfigurator_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F37E29287ECE0200DF6433 /* MainFooterConfigurator_ME.swift */; };
@@ -121,7 +121,7 @@
 		94AB0CCC286A50C300742A33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		94AB0CCE286A50C300742A33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94AB0CD5286A527800742A33 /* MainCollectionViewCell_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell_ME.swift; sourceTree = "<group>"; };
-		94AB0CD8286A532800742A33 /* MainCollectionHeaderReusableView_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionHeaderReusableView_ME.swift; sourceTree = "<group>"; };
+		94AB0CD8286A532800742A33 /* MainCollectionHeaderCellView_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionHeaderCellView_ME.swift; sourceTree = "<group>"; };
 		94AB0CDD286B457F00742A33 /* Module_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Module_ME.swift; sourceTree = "<group>"; };
 		94AB0CE2286B45BB00742A33 /* ModuleGateway_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleGateway_ME.swift; sourceTree = "<group>"; };
 		94AB0CE4286B462800742A33 /* BasicArticle_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicArticle_ME.swift; sourceTree = "<group>"; };
@@ -156,7 +156,7 @@
 		94D89B69287F66A100AE086F /* MainFooterViewModel_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFooterViewModel_ME.swift; sourceTree = "<group>"; };
 		94D89B6D28807D6700AE086F /* UIViewGradientBackground_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewGradientBackground_ME.swift; sourceTree = "<group>"; };
 		94D89B702880AE9700AE086F /* CachedCollectionIndexPaths_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedCollectionIndexPaths_ME.swift; sourceTree = "<group>"; };
-		94F37E20287ECC4C00DF6433 /* MainCollectionFooterReusableView_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionFooterReusableView_ME.swift; sourceTree = "<group>"; };
+		94F37E20287ECC4C00DF6433 /* MainCollectionFooterCellView_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionFooterCellView_ME.swift; sourceTree = "<group>"; };
 		94F37E24287ECCA300DF6433 /* FooterCollectionViewCell_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterCollectionViewCell_ME.swift; sourceTree = "<group>"; };
 		94F37E29287ECE0200DF6433 /* MainFooterConfigurator_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFooterConfigurator_ME.swift; sourceTree = "<group>"; };
 		94F37E2D287EF2F100DF6433 /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
@@ -500,7 +500,7 @@
 		94B0D1BC286E42720006899B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				94AB0CD8286A532800742A33 /* MainCollectionHeaderReusableView_ME.swift */,
+				94AB0CD8286A532800742A33 /* MainCollectionHeaderCellView_ME.swift */,
 				94B0D1CC286EE60A0006899B /* HeaderCell */,
 			);
 			path = View;
@@ -610,7 +610,7 @@
 		94F37E28287ECDF000DF6433 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				94F37E20287ECC4C00DF6433 /* MainCollectionFooterReusableView_ME.swift */,
+				94F37E20287ECC4C00DF6433 /* MainCollectionFooterCellView_ME.swift */,
 				94F37E27287ECCAA00DF6433 /* FooterCell */,
 			);
 			path = View;
@@ -751,7 +751,7 @@
 				94B0D1C2286E44320006899B /* BasicArticleNetworkEntity_ME.swift in Sources */,
 				94D89B59287F61E200AE086F /* BlogArticleGateway_ME.swift in Sources */,
 				94B0D1BE286E43980006899B /* BasicArticleNetworkRepository_ME.swift in Sources */,
-				94AB0CD9286A532800742A33 /* MainCollectionHeaderReusableView_ME.swift in Sources */,
+				94AB0CD9286A532800742A33 /* MainCollectionHeaderCellView_ME.swift in Sources */,
 				94D89B5E287F631100AE086F /* BlogArticleRepository_ME.swift in Sources */,
 				94D89B6E28807D6700AE086F /* UIViewGradientBackground_ME.swift in Sources */,
 				94B0D1B9286E3EA20006899B /* MainHeaderConfigurator_ME.swift in Sources */,
@@ -785,7 +785,7 @@
 				94B0D1AD286DC20E0006899B /* ModuleNetworkRepository_ME.swift in Sources */,
 				94D89B6A287F66A100AE086F /* MainFooterViewModel_ME.swift in Sources */,
 				94B0D1A9286DB2250006899B /* BasicArticleRepository_ME.swift in Sources */,
-				94F37E21287ECC4C00DF6433 /* MainCollectionFooterReusableView_ME.swift in Sources */,
+				94F37E21287ECC4C00DF6433 /* MainCollectionFooterCellView_ME.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -796,7 +796,7 @@
 				94B0D1C3286E44320006899B /* BasicArticleNetworkEntity_ME.swift in Sources */,
 				94D89B5A287F61E200AE086F /* BlogArticleGateway_ME.swift in Sources */,
 				94B0D1BF286E43980006899B /* BasicArticleNetworkRepository_ME.swift in Sources */,
-				94AB0D01286C3F8400742A33 /* MainCollectionHeaderReusableView_ME.swift in Sources */,
+				94AB0D01286C3F8400742A33 /* MainCollectionHeaderCellView_ME.swift in Sources */,
 				94D89B5F287F631100AE086F /* BlogArticleRepository_ME.swift in Sources */,
 				94D89B6F28807D6700AE086F /* UIViewGradientBackground_ME.swift in Sources */,
 				94B0D1BA286E3EA20006899B /* MainHeaderConfigurator_ME.swift in Sources */,
@@ -830,7 +830,7 @@
 				94B0D1AE286DC20E0006899B /* ModuleNetworkRepository_ME.swift in Sources */,
 				94D89B6B287F66A100AE086F /* MainFooterViewModel_ME.swift in Sources */,
 				94B0D1AA286DB2250006899B /* BasicArticleRepository_ME.swift in Sources */,
-				94F37E22287ECC4C00DF6433 /* MainCollectionFooterReusableView_ME.swift in Sources */,
+				94F37E22287ECC4C00DF6433 /* MainCollectionFooterCellView_ME.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

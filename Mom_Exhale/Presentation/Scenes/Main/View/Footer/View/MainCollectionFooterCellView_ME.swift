@@ -9,13 +9,13 @@
 
 import UIKit
 
-class MainCollectionFooterReusableView_ME: UICollectionReusableView,
-                                           UICollectionViewDelegate,
-                                           UICollectionViewDataSource {
+class MainCollectionFooterCellView_ME: UICollectionViewCell,
+                                       UICollectionViewDelegate,
+                                       UICollectionViewDataSource {
     
     // MARK: - Static
     
-    static let identifier = String(describing: MainCollectionFooterReusableView_ME.self)
+    static let identifier = String(describing: MainCollectionFooterCellView_ME.self)
     
     
     // MARK: - Dependencies
@@ -177,14 +177,8 @@ class MainCollectionFooterReusableView_ME: UICollectionReusableView,
             fatalError()
         }
         guard let vm = viewModel else { return cell }
-        
-        // TODO: numberOfItemsInSection correct calls
-//        guard vm.blogArticles.value.indices.contains(indexPath.row) else { return cell }
-//        guard vm.blogArticles.value.count > 0 else { return cell }
-        
         let title = vm.blogArticles.value[indexPath.row].title
         cell.setupCellUI(text: title)
-        
         return cell
     }
     

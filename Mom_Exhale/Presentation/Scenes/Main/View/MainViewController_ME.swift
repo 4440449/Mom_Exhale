@@ -55,7 +55,7 @@ class MainViewController_ME: UIViewController,
     func setupObservers() {
         viewModel.modules.subscribe(observer: self) { [weak self] modules in
             guard let strongSelf = self else { return }
-            strongSelf.collection.reloadSections(IndexSet(integer: 0))
+            strongSelf.collection.reloadSections(IndexSet(integer: 1))
         }
         
         viewModel.isLoading.subscribe(observer: self) { [weak self] isLoading in
@@ -94,12 +94,8 @@ class MainViewController_ME: UIViewController,
                                           collectionViewLayout: setupCollectionViewLayout())
         collection.register(MainCollectionViewCell_ME.self,
                             forCellWithReuseIdentifier: MainCollectionViewCell_ME.identifier)
-        collection.register(MainCollectionHeaderReusableView_ME.self,
-                            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-                            withReuseIdentifier: MainCollectionHeaderReusableView_ME.identifier)
-        collection.register(MainCollectionFooterReusableView_ME.self,
-                            forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
-                            withReuseIdentifier: MainCollectionFooterReusableView_ME.identifier)
+        collection.register(MainCollectionHeaderCellView_ME.self, forCellWithReuseIdentifier: MainCollectionHeaderCellView_ME.identifier)
+        collection.register(MainCollectionFooterCellView_ME.self, forCellWithReuseIdentifier: MainCollectionFooterCellView_ME.identifier)
         collection.contentInset.top = 5
         collection.alwaysBounceVertical = true
         collection.showsVerticalScrollIndicator = false
@@ -107,7 +103,7 @@ class MainViewController_ME: UIViewController,
         collection.isPrefetchingEnabled = false
         collection.dataSource = self
         collection.delegate = self
-      
+        
         return collection
     }()
     
@@ -135,7 +131,7 @@ class MainViewController_ME: UIViewController,
     
     
     // MARK: - Initital UI
-
+    
     private func setupInitialUI() {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.topItem?.rightBarButtonItem = userNavBarButton
@@ -156,127 +152,122 @@ class MainViewController_ME: UIViewController,
     
     
     //CollectionView
-    
-    enum Section: Int, CaseIterable {
-            case header
-            case grid
-            case footer
-
-            var columnCount: Int {
-                switch self {
-                case .header:
-                    return 1
-                case .grid:
-                    return 2
-                case .footer:
-                    return 1
-                }
+    private func setupCollectionViewLayout() -> UICollectionViewCompositionalLayout {
+        let layout = UICollectionViewCompositionalLayout { section, env in
+            switch section {
+            case 0:
+                let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),heightDimension: .fractionalHeight(1))
+                let item = NSCollectionLayoutItem(layoutSize: itemSize)
+                
+                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),heightDimension: .fractionalHeight(0.17))
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+                
+                let section = NSCollectionLayoutSection(group: group)
+                section.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 25, bottom: 5, trailing: 25)
+                return section
+                
+            case 1:
+                let leadingItemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),heightDimension: .fractionalHeight(0.5))
+                let leadingItem = NSCollectionLayoutItem(layoutSize: leadingItemSize)
+                leadingItem.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
+                
+                let leadingGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5),heightDimension: .fractionalHeight(1))
+                let leadingGroup = NSCollectionLayoutGroup.vertical(layoutSize: leadingGroupSize, subitems: [leadingItem])
+                
+                let trailingItemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5),heightDimension: .fractionalHeight(1))
+                let trailingItem = NSCollectionLayoutItem(layoutSize: trailingItemSize)
+                trailingItem.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
+                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+                                                       heightDimension: .fractionalHeight(0.4))
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [leadingGroup, trailingItem])
+                
+                let section = NSCollectionLayoutSection(group: group)
+                section.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 25, bottom: 5, trailing: 25)
+                return section
+                
+            case 2:
+                let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),heightDimension: .fractionalHeight(1))
+                let item = NSCollectionLayoutItem(layoutSize: itemSize)
+                
+                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),heightDimension: .fractionalHeight(0.17))
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+                
+                let section = NSCollectionLayoutSection(group: group)
+                section.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 25, bottom: 5, trailing: 25)
+                return section
+                
+            default:
+                fatalError()
             }
         }
-    
-    private func setupCollectionViewLayout() -> UICollectionViewCompositionalLayout {
-        
-//        let headerLayout = UICollectionViewCompositionalLayout { section, env in
-//            <#code#>
-//        }
-        
-        
-        
-        
-        let leadingItemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),heightDimension: .fractionalHeight(0.5))
-        let leadingItem = NSCollectionLayoutItem(layoutSize: leadingItemSize)
-        leadingItem.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
-        
-        let leadingGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5),heightDimension: .fractionalHeight(1))
-        let leadingGroup = NSCollectionLayoutGroup.vertical(layoutSize: leadingGroupSize, subitems: [leadingItem])
-        
-        let trailingItemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5),heightDimension: .fractionalHeight(1))
-        let trailingItem = NSCollectionLayoutItem(layoutSize: trailingItemSize)
-        trailingItem.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
-        
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
-                                               heightDimension: .fractionalHeight(0.4))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [leadingGroup, trailingItem])
-        
-        let header = NSCollectionLayoutBoundarySupplementaryItem(
-            layoutSize: .init(widthDimension: .fractionalWidth(1),
-                              heightDimension: .fractionalHeight(0.17)),
-            elementKind: UICollectionView.elementKindSectionHeader,
-            alignment: .top)
-        
-        let footer = NSCollectionLayoutBoundarySupplementaryItem(
-            layoutSize: .init(widthDimension: .fractionalWidth(1),
-                              heightDimension: .fractionalHeight(0.17)),
-            elementKind: UICollectionView.elementKindSectionFooter,
-            alignment: .bottom)
-        
-        let section = NSCollectionLayoutSection(group: group)
-        section.boundarySupplementaryItems = [header, footer]
-        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 25, bottom: 10, trailing: 25)
-        
-        return UICollectionViewCompositionalLayout(section: section)
+        return layout
     }
     
     
     // MARK: - Collection Data source
     
-//    func numberOfSections(in collectionView: UICollectionView) -> Int {
-//        3
-//    }
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 3
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.modules.value.count
+        switch section {
+        case 0:
+            return 1
+        case 1:
+            return viewModel.modules.value.count
+        case 2:
+            return 1
+        default:
+            fatalError()
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainCollectionViewCell_ME.identifier, for: indexPath) as? MainCollectionViewCell_ME else {
-            fatalError()
-        }
-        let module = viewModel.modules.value[indexPath.row]
-        switch module.keyName {
-        case .babyTracker:
-            cell.setupCellUI(position: .topLeading,
-                             text: module.title,
-                             textColor: module.titleColor.color(),
-                             image: module.image)
-        case .BLW:
-            cell.setupCellUI(position: .bottomTrailing,
-                             text: module.title,
-                             textColor: module.titleColor.color(),
-                             image: module.image)
-        case .calmingNotifications:
-            cell.setupCellUI(position: .center,
-                             text: module.title,
-                             textColor: module.titleColor.color(),
-                             image: module.image)
-        }
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        switch kind {
-        case UICollectionView.elementKindSectionHeader:
-           guard let header = collectionView.dequeueReusableSupplementaryView(
-                ofKind: UICollectionView.elementKindSectionHeader,
-                withReuseIdentifier: MainCollectionHeaderReusableView_ME.identifier,
-                for: indexPath) as? MainCollectionHeaderReusableView_ME else { fatalError()
-                }
-            headerConfigurator.configure(header)
-            header.viewDidLoad()
-            return header
+        
+        switch indexPath.section {
+        case 0:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainCollectionHeaderCellView_ME.identifier, for: indexPath) as? MainCollectionHeaderCellView_ME else {
+                fatalError()
+            }
+            headerConfigurator.configure(cell)
+            cell.viewDidLoad()
+            return cell
             
-        case UICollectionView.elementKindSectionFooter:
-            guard let footer = collectionView.dequeueReusableSupplementaryView(
-                ofKind: UICollectionView.elementKindSectionFooter,
-                withReuseIdentifier: MainCollectionFooterReusableView_ME.identifier,
-                for: indexPath) as? MainCollectionFooterReusableView_ME else { fatalError()
-                }
-            footerConfigurator.configure(footer)
-            footer.viewDidLoad()
-            return footer
+        case 1:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainCollectionViewCell_ME.identifier, for: indexPath) as? MainCollectionViewCell_ME else {
+                fatalError()
+            }
+            let module = viewModel.modules.value[indexPath.row]
+            switch module.keyName {
+            case .babyTracker:
+                cell.setupCellUI(position: .topLeading,
+                                 text: module.title,
+                                 textColor: module.titleColor.color(),
+                                 image: module.image)
+            case .BLW:
+                cell.setupCellUI(position: .bottomTrailing,
+                                 text: module.title,
+                                 textColor: module.titleColor.color(),
+                                 image: module.image)
+            case .calmingNotifications:
+                cell.setupCellUI(position: .center,
+                                 text: module.title,
+                                 textColor: module.titleColor.color(),
+                                 image: module.image)
+            }
+            return cell
+            
+        case 2:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainCollectionFooterCellView_ME.identifier, for: indexPath) as? MainCollectionFooterCellView_ME else {
+                fatalError()
+            }
+            footerConfigurator.configure(cell)
+            cell.viewDidLoad()
+            return cell
             
         default:
-            assert(false, "Unexpected element kind")
+            fatalError()
         }
     }
     
@@ -287,45 +278,5 @@ class MainViewController_ME: UIViewController,
         viewModel.didSelectItem(index: indexPath.row)
     }
     
-
-    
 }
 
-
-
-
-
-//private func setupCollectionViewLayout() -> UICollectionViewCompositionalLayout {
-//    let leadingItemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),heightDimension: .fractionalHeight(0.5))
-//    let leadingItem = NSCollectionLayoutItem(layoutSize: leadingItemSize)
-//    leadingItem.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
-//
-//    let leadingGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5),heightDimension: .fractionalHeight(1))
-//    let leadingGroup = NSCollectionLayoutGroup.vertical(layoutSize: leadingGroupSize, subitems: [leadingItem])
-//
-//    let trailingItemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5),heightDimension: .fractionalHeight(1))
-//    let trailingItem = NSCollectionLayoutItem(layoutSize: trailingItemSize)
-//    trailingItem.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
-//
-//    let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
-//                                           heightDimension: .fractionalHeight(0.4))
-//    let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [leadingGroup, trailingItem])
-//
-//    let header = NSCollectionLayoutBoundarySupplementaryItem(
-//        layoutSize: .init(widthDimension: .fractionalWidth(1),
-//                          heightDimension: .fractionalHeight(0.17)),
-//        elementKind: UICollectionView.elementKindSectionHeader,
-//        alignment: .top)
-//
-//    let footer = NSCollectionLayoutBoundarySupplementaryItem(
-//        layoutSize: .init(widthDimension: .fractionalWidth(1),
-//                          heightDimension: .fractionalHeight(0.17)),
-//        elementKind: UICollectionView.elementKindSectionFooter,
-//        alignment: .bottom)
-//
-//    let section = NSCollectionLayoutSection(group: group)
-//    section.boundarySupplementaryItems = [header, footer]
-//    section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 25, bottom: 10, trailing: 25)
-//
-//    return UICollectionViewCompositionalLayout(section: section)
-//}
