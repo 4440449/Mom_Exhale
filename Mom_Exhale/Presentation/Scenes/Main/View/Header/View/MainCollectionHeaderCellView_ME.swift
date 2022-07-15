@@ -92,7 +92,7 @@ class MainCollectionHeaderCellView_ME: UICollectionViewCell,
         let label = UILabel()
         label.text = "базовые статьи"
         label.font = UIFont(name: "Montserrat-Regular", size: 13)!
-        label.textColor = .label
+        label.textColor = .black
         label.numberOfLines = 1
         label.textAlignment = .right
         label.translatesAutoresizingMaskIntoConstraints = false
