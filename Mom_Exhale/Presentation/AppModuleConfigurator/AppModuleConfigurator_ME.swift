@@ -8,9 +8,11 @@
 import Foundation
 import UIKit
 import SwiftUI
+#if ROOT_APP
 import SamoprikormModule
 import BabyTrackerModule
 import CalmingNotificationsModule
+#endif
 
 
 protocol AppModuleConfiguratorProtocol_ME {

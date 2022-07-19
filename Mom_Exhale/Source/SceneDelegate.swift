@@ -12,10 +12,8 @@ import MommysEye
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    let sceneState = Publisher(value: SceneState.background)
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         let repositoryDIContainer = GatewaysRepositoryDIContainer_ME()
@@ -37,11 +35,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func sceneWillEnterForeground(_ scene: UIScene) {
-        sceneState.value = .foreground
+        
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
-        sceneState.value = .background
+        
     }
 
 

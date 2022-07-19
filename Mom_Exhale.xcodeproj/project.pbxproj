@@ -7,11 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		946AF5CC2872E34D0047E508 /* BabyTrackerModule in Frameworks */ = {isa = PBXBuildFile; productRef = 946AF5CB2872E34D0047E508 /* BabyTrackerModule */; };
-		946AF5D02872EFF60047E508 /* CalmingNotificationsModule in Frameworks */ = {isa = PBXBuildFile; productRef = 946AF5CF2872EFF60047E508 /* CalmingNotificationsModule */; };
-		946AF5D22872EFFB0047E508 /* SamoprikormModule in Frameworks */ = {isa = PBXBuildFile; productRef = 946AF5D12872EFFB0047E508 /* SamoprikormModule */; };
-		94A50DD9286F501B00C2C246 /* SceneState_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A50DD8286F501B00C2C246 /* SceneState_ME.swift */; };
-		94A50DDA286F501B00C2C246 /* SceneState_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A50DD8286F501B00C2C246 /* SceneState_ME.swift */; };
 		94AB0CC1286A50C200742A33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AB0CC0286A50C200742A33 /* AppDelegate.swift */; };
 		94AB0CC3286A50C200742A33 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AB0CC2286A50C200742A33 /* SceneDelegate.swift */; };
 		94AB0CC5286A50C200742A33 /* MainViewController_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AB0CC4286A50C200742A33 /* MainViewController_ME.swift */; };
@@ -89,6 +84,9 @@
 		94D89B6F28807D6700AE086F /* UIViewGradientBackground_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D89B6D28807D6700AE086F /* UIViewGradientBackground_ME.swift */; };
 		94D89B712880AE9700AE086F /* CachedCollectionIndexPaths_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D89B702880AE9700AE086F /* CachedCollectionIndexPaths_ME.swift */; };
 		94D89B722880AE9700AE086F /* CachedCollectionIndexPaths_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D89B702880AE9700AE086F /* CachedCollectionIndexPaths_ME.swift */; };
+		94DE18552886EC52001C1B43 /* CalmingNotificationsModule in Frameworks */ = {isa = PBXBuildFile; productRef = 94DE18542886EC52001C1B43 /* CalmingNotificationsModule */; };
+		94DE18572886EC92001C1B43 /* SamoprikormModule in Frameworks */ = {isa = PBXBuildFile; productRef = 94DE18562886EC92001C1B43 /* SamoprikormModule */; };
+		94DE18592886EC97001C1B43 /* BabyTrackerModule in Frameworks */ = {isa = PBXBuildFile; productRef = 94DE18582886EC97001C1B43 /* BabyTrackerModule */; };
 		94F37E1B287EC1A400DF6433 /* Montserrat-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 94B0D193286C9F4C0006899B /* Montserrat-Thin.ttf */; };
 		94F37E1C287EC1A600DF6433 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 94B0D191286C9F4C0006899B /* Montserrat-Regular.ttf */; };
 		94F37E1D287EC1A700DF6433 /* Montserrat-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 94B0D192286C9F4C0006899B /* Montserrat-ExtraBold.ttf */; };
@@ -106,13 +104,11 @@
 		94F37E32287F1D0000DF6433 /* MainCellLabelPosition_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F37E30287F1D0000DF6433 /* MainCellLabelPosition_ME.swift */; };
 		94F37E34287F5CAD00DF6433 /* TitleColor_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F37E33287F5CAD00DF6433 /* TitleColor_ME.swift */; };
 		94F37E35287F5CAD00DF6433 /* TitleColor_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F37E33287F5CAD00DF6433 /* TitleColor_ME.swift */; };
+		94FA2E61288740AF00221607 /* LaunchScreenViewController_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FA2E60288740AF00221607 /* LaunchScreenViewController_ME.swift */; };
+		94FA2E62288740AF00221607 /* LaunchScreenViewController_ME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FA2E60288740AF00221607 /* LaunchScreenViewController_ME.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		946AF5CA2872E22E0047E508 /* BabyTrackerModule */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = BabyTrackerModule; path = ../BabyTrackerModule; sourceTree = "<group>"; };
-		946AF5CD2872EFE10047E508 /* CalmingNotificationsModule */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = CalmingNotificationsModule; path = ../CalmingNotificationsModule; sourceTree = "<group>"; };
-		946AF5CE2872EFEB0047E508 /* SamoprikormModule */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SamoprikormModule; path = ../SamoprikormModule; sourceTree = "<group>"; };
-		94A50DD8286F501B00C2C246 /* SceneState_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneState_ME.swift; sourceTree = "<group>"; };
 		94AB0CBD286A50C200742A33 /* Mom_Exhale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mom_Exhale.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94AB0CC0286A50C200742A33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94AB0CC2286A50C200742A33 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -156,12 +152,16 @@
 		94D89B69287F66A100AE086F /* MainFooterViewModel_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFooterViewModel_ME.swift; sourceTree = "<group>"; };
 		94D89B6D28807D6700AE086F /* UIViewGradientBackground_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewGradientBackground_ME.swift; sourceTree = "<group>"; };
 		94D89B702880AE9700AE086F /* CachedCollectionIndexPaths_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedCollectionIndexPaths_ME.swift; sourceTree = "<group>"; };
+		94DE18502886EBF9001C1B43 /* CalmingNotificationsModule */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = CalmingNotificationsModule; path = ../CalmingNotificationsModule; sourceTree = "<group>"; };
+		94DE18512886EC0D001C1B43 /* BabyTrackerModule */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = BabyTrackerModule; path = ../BabyTrackerModule; sourceTree = "<group>"; };
+		94DE18522886EC1B001C1B43 /* SamoprikormModule */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SamoprikormModule; path = ../SamoprikormModule; sourceTree = "<group>"; };
 		94F37E20287ECC4C00DF6433 /* MainCollectionFooterCellView_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionFooterCellView_ME.swift; sourceTree = "<group>"; };
 		94F37E24287ECCA300DF6433 /* FooterCollectionViewCell_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterCollectionViewCell_ME.swift; sourceTree = "<group>"; };
 		94F37E29287ECE0200DF6433 /* MainFooterConfigurator_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFooterConfigurator_ME.swift; sourceTree = "<group>"; };
 		94F37E2D287EF2F100DF6433 /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
 		94F37E30287F1D0000DF6433 /* MainCellLabelPosition_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCellLabelPosition_ME.swift; sourceTree = "<group>"; };
 		94F37E33287F5CAD00DF6433 /* TitleColor_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleColor_ME.swift; sourceTree = "<group>"; };
+		94FA2E60288740AF00221607 /* LaunchScreenViewController_ME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController_ME.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,34 +179,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				94B0D17A286C79C00006899B /* BabyNet in Frameworks */,
-				946AF5D02872EFF60047E508 /* CalmingNotificationsModule in Frameworks */,
-				946AF5CC2872E34D0047E508 /* BabyTrackerModule in Frameworks */,
+				94DE18552886EC52001C1B43 /* CalmingNotificationsModule in Frameworks */,
+				94DE18592886EC97001C1B43 /* BabyTrackerModule in Frameworks */,
 				94B0D178286C79BD0006899B /* MommysEye in Frameworks */,
-				946AF5D22872EFFB0047E508 /* SamoprikormModule in Frameworks */,
+				94DE18572886EC92001C1B43 /* SamoprikormModule in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		946AF5C92872E22E0047E508 /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-				946AF5CA2872E22E0047E508 /* BabyTrackerModule */,
-				946AF5CD2872EFE10047E508 /* CalmingNotificationsModule */,
-				946AF5CE2872EFEB0047E508 /* SamoprikormModule */,
-			);
-			name = Packages;
-			sourceTree = "<group>";
-		};
 		94AB0CB4286A50C200742A33 = {
 			isa = PBXGroup;
 			children = (
 				94AB0CBF286A50C200742A33 /* Mom_Exhale */,
 				94AB0D17286C3F8400742A33 /* Mom_Exhale Root App Info.plist */,
+				94DE184F2886EBF9001C1B43 /* Packages */,
 				94AB0CBE286A50C200742A33 /* Products */,
-				946AF5C92872E22E0047E508 /* Packages */,
-				94B0D1D5286F150E0006899B /* Frameworks */,
+				94DE18532886EC52001C1B43 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -226,7 +216,7 @@
 				94AB0CE1286B45A400742A33 /* Domain */,
 				94AB0CF8286B4B7800742A33 /* Data */,
 				94AB0CDB286B44B400742A33 /* Presentation */,
-				94B0D1A3286DAF290006899B /* Other */,
+				94B0D1A3286DAF290006899B /* Resources */,
 				94AB0CCE286A50C300742A33 /* Info.plist */,
 			);
 			path = Mom_Exhale;
@@ -264,8 +254,9 @@
 		94AB0CDB286B44B400742A33 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				94AB0CFE286C3C1C00742A33 /* AppModuleConfigurator */,
 				94AB0CEC286B475000742A33 /* Scenes */,
-				94B0D1A2286DAE760006899B /* Tools */,
+				94B0D1A2286DAE760006899B /* Infrastructure */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -275,8 +266,6 @@
 			children = (
 				94AB0CC0286A50C200742A33 /* AppDelegate.swift */,
 				94AB0CC2286A50C200742A33 /* SceneDelegate.swift */,
-				94A50DD8286F501B00C2C246 /* SceneState_ME.swift */,
-				94AB0CFE286C3C1C00742A33 /* AppConfigurator */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -404,12 +393,12 @@
 			path = DIContainer;
 			sourceTree = "<group>";
 		};
-		94AB0CFE286C3C1C00742A33 /* AppConfigurator */ = {
+		94AB0CFE286C3C1C00742A33 /* AppModuleConfigurator */ = {
 			isa = PBXGroup;
 			children = (
 				94AB0CFC286B696A00742A33 /* AppModuleConfigurator_ME.swift */,
 			);
-			path = AppConfigurator;
+			path = AppModuleConfigurator;
 			sourceTree = "<group>";
 		};
 		94B0D19D286CAEBF0006899B /* Router */ = {
@@ -428,7 +417,7 @@
 			path = Configurator;
 			sourceTree = "<group>";
 		};
-		94B0D1A2286DAE760006899B /* Tools */ = {
+		94B0D1A2286DAE760006899B /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
 				94F37E30287F1D0000DF6433 /* MainCellLabelPosition_ME.swift */,
@@ -437,10 +426,10 @@
 				94D89B702880AE9700AE086F /* CachedCollectionIndexPaths_ME.swift */,
 				94B0D1A1286DAE6B0006899B /* Configurator */,
 			);
-			path = Tools;
+			path = Infrastructure;
 			sourceTree = "<group>";
 		};
-		94B0D1A3286DAF290006899B /* Other */ = {
+		94B0D1A3286DAF290006899B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				94AB0CC9286A50C300742A33 /* Assets.xcassets */,
@@ -451,8 +440,9 @@
 				94F37E2D287EF2F100DF6433 /* Montserrat-Light.ttf */,
 				94B0D193286C9F4C0006899B /* Montserrat-Thin.ttf */,
 				94AB0CCB286A50C300742A33 /* LaunchScreen.storyboard */,
+				94FA2E60288740AF00221607 /* LaunchScreenViewController_ME.swift */,
 			);
-			path = Other;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		94B0D1AB286DB2490006899B /* BasicArticle */ = {
@@ -531,13 +521,6 @@
 			path = HeaderCell;
 			sourceTree = "<group>";
 		};
-		94B0D1D5286F150E0006899B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		94D89B5B287F61E700AE086F /* Gateway */ = {
 			isa = PBXGroup;
 			children = (
@@ -587,6 +570,23 @@
 				94D89B69287F66A100AE086F /* MainFooterViewModel_ME.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		94DE184F2886EBF9001C1B43 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				94DE18502886EBF9001C1B43 /* CalmingNotificationsModule */,
+				94DE18512886EC0D001C1B43 /* BabyTrackerModule */,
+				94DE18522886EC1B001C1B43 /* SamoprikormModule */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		94DE18532886EC52001C1B43 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		94F37E23287ECC4F00DF6433 /* Footer */ = {
@@ -664,9 +664,9 @@
 			packageProductDependencies = (
 				94B0D177286C79BD0006899B /* MommysEye */,
 				94B0D179286C79C00006899B /* BabyNet */,
-				946AF5CB2872E34D0047E508 /* BabyTrackerModule */,
-				946AF5CF2872EFF60047E508 /* CalmingNotificationsModule */,
-				946AF5D12872EFFB0047E508 /* SamoprikormModule */,
+				94DE18542886EC52001C1B43 /* CalmingNotificationsModule */,
+				94DE18562886EC92001C1B43 /* SamoprikormModule */,
+				94DE18582886EC97001C1B43 /* BabyTrackerModule */,
 			);
 			productName = "Moms Exhale";
 			productReference = 94AB0D16286C3F8400742A33 /* Mom_Exhale Root App.app */;
@@ -765,9 +765,9 @@
 				94B0D1B5286E2AFC0006899B /* MainHeaderViewModel_ME.swift in Sources */,
 				94AB0CE3286B45BB00742A33 /* ModuleGateway_ME.swift in Sources */,
 				94B0D19F286DAE660006899B /* SceneConfigurator_ME.swift in Sources */,
-				94A50DD9286F501B00C2C246 /* SceneState_ME.swift in Sources */,
 				94F37E25287ECCA300DF6433 /* FooterCollectionViewCell_ME.swift in Sources */,
 				94AB0CC5286A50C200742A33 /* MainViewController_ME.swift in Sources */,
+				94FA2E61288740AF00221607 /* LaunchScreenViewController_ME.swift in Sources */,
 				94F37E2A287ECE0200DF6433 /* MainFooterConfigurator_ME.swift in Sources */,
 				94AB0CEF286B476E00742A33 /* MainViewModel_ME.swift in Sources */,
 				94F37E31287F1D0000DF6433 /* MainCellLabelPosition_ME.swift in Sources */,
@@ -810,9 +810,9 @@
 				94B0D1B6286E2AFC0006899B /* MainHeaderViewModel_ME.swift in Sources */,
 				94AB0D06286C3F8400742A33 /* ModuleGateway_ME.swift in Sources */,
 				94B0D1A0286DAE660006899B /* SceneConfigurator_ME.swift in Sources */,
-				94A50DDA286F501B00C2C246 /* SceneState_ME.swift in Sources */,
 				94F37E26287ECCA300DF6433 /* FooterCollectionViewCell_ME.swift in Sources */,
 				94AB0D07286C3F8400742A33 /* MainViewController_ME.swift in Sources */,
+				94FA2E62288740AF00221607 /* LaunchScreenViewController_ME.swift in Sources */,
 				94F37E2B287ECE0200DF6433 /* MainFooterConfigurator_ME.swift in Sources */,
 				94AB0D08286C3F8400742A33 /* MainViewModel_ME.swift in Sources */,
 				94F37E32287F1D0000DF6433 /* MainCellLabelPosition_ME.swift in Sources */,
@@ -899,7 +899,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -954,7 +954,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -976,6 +976,8 @@
 				INFOPLIST_FILE = Mom_Exhale/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -987,7 +989,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1003,6 +1005,8 @@
 				INFOPLIST_FILE = Mom_Exhale/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1014,7 +1018,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -1028,8 +1032,11 @@
 				DEVELOPMENT_TEAM = 49V2NFTYLV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Mom_Exhale Root App Info.plist";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Разрешите сохранять изображения в галерею";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1042,7 +1049,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1056,8 +1063,11 @@
 				DEVELOPMENT_TEAM = 49V2NFTYLV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Mom_Exhale Root App Info.plist";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Разрешите сохранять изображения в галерею";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1070,7 +1080,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -1126,18 +1136,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		946AF5CB2872E34D0047E508 /* BabyTrackerModule */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = BabyTrackerModule;
-		};
-		946AF5CF2872EFF60047E508 /* CalmingNotificationsModule */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = CalmingNotificationsModule;
-		};
-		946AF5D12872EFFB0047E508 /* SamoprikormModule */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SamoprikormModule;
-		};
 		94B0D172286C79910006899B /* MommysEye */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 94B0D171286C79910006899B /* XCRemoteSwiftPackageReference "MommysEye" */;
@@ -1157,6 +1155,18 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 94B0D174286C799B0006899B /* XCRemoteSwiftPackageReference "BabyNet" */;
 			productName = BabyNet;
+		};
+		94DE18542886EC52001C1B43 /* CalmingNotificationsModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CalmingNotificationsModule;
+		};
+		94DE18562886EC92001C1B43 /* SamoprikormModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SamoprikormModule;
+		};
+		94DE18582886EC97001C1B43 /* BabyTrackerModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BabyTrackerModule;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

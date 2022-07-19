@@ -130,7 +130,6 @@ class MainCollectionFooterCellView_ME: UICollectionViewCell,
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         if traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) {
-            print("Fotter shadowColor has been changed")
             self.layer.shadowColor = UIColor(named: "bottomShadowColor")?.cgColor
             collection.layer.borderColor = UIColor(named: "FooterBorderColor")?.cgColor
         }

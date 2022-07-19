@@ -73,7 +73,6 @@ class MainCollectionHeaderCellView_ME: UICollectionViewCell,
                                           collectionViewLayout: setupCollectionViewLayout())
         collection.register(HeaderCollectionViewCell_ME.self,
                             forCellWithReuseIdentifier: HeaderCollectionViewCell_ME.identifier)
-        //TODO: - collection backgroundColor gradient
         let c1 = UIColor(red: 0.968, green: 0.711, blue: 0.559, alpha: 1)
         let c2 = UIColor(red: 0.988, green: 0.795, blue: 0.619, alpha: 1)
         collection.setGradientBackground(fromColor: c1, toColor: c2,
@@ -171,7 +170,7 @@ class MainCollectionHeaderCellView_ME: UICollectionViewCell,
     // MARK: - Collection Data source
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("numberOfItemsInSection == \(viewModel?.basicArticles.value.count ?? 0)")
+//        print("numberOfItemsInSection == \(viewModel?.basicArticles.value.count ?? 0)")
         return viewModel?.basicArticles.value.count ?? 0
     }
     
@@ -179,7 +178,7 @@ class MainCollectionHeaderCellView_ME: UICollectionViewCell,
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HeaderCollectionViewCell_ME.identifier, for: indexPath) as? HeaderCollectionViewCell_ME else {
             fatalError()
         }
-        print(" \n ----- basicArticles.value.count == \(viewModel!.basicArticles.value.count) indexPath.row == \(indexPath.row) ------ \n")
+//        print(" \n ----- basicArticles.value.count == \(viewModel!.basicArticles.value.count) indexPath.row == \(indexPath.row) ------ \n")
         guard let vm = viewModel else { return cell }
         let title = vm.basicArticles.value[indexPath.row].title
         cell.setupCellUI(text: title)
