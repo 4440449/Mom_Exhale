@@ -29,7 +29,7 @@
 - Модульная архитектура, проект разделен на подпроекты, которые инъектятся через SPM обертку
 - MVVМ + R. Элементы Clean architecture
 - Каждый экран выделен в отдельную сцену со своим окружением (Configurator, ViewModel, Router)
-- Плоский Navigation Flow с Repository store container, подробнее [здесь](https://github.com/4440449/CalmMom/blame/master/README.md#L22-L38)
+- Плоский Navigation Flow с Repository store container, подробнее [здесь](https://github.com/4440449/CalmMom/blame/master/README.md#L25-L36)
 - DI для каждой сцены со сбокрой через static объект
 - Observing через [собственную библиотеку](https://github.com/4440449/MommysEye)
 - Network через [собственную библиотеку](https://github.com/4440449/BabyNet)
@@ -41,7 +41,7 @@
 
 ## Features
          
-* Навигация по модулям происходит через отдельный [Конфиг объект](https://github.com/4440449/Mom_Exhale/blob/master/Mom_Exhale/Source/AppConfigurator/AppModuleConfigurator_ME.swift), в котором инкапсулированы все зависимости. Делая свич по входящему ключу, Конфиг предоставляет ту или иную реализацию презентуемого модуля в виде его начального View Controller с полным окружением и зависимостями. Далее, полученный View Controller презентится модально.  
+* Навигация по модулям происходит через отдельный [Конфиг объект](https://github.com/4440449/Mom_Exhale/blob/master/Mom_Exhale/Presentation/AppModuleConfigurator/AppModuleConfigurator_ME.swift), в котором инкапсулированы все зависимости. Делая свич по входящему ключу, Конфиг предоставляет ту или иную реализацию презентуемого модуля в виде его начального View Controller с полным окружением и зависимостями. Далее, полученный View Controller презентится модально.  
     **Схема:**  
     ![Alt text](README_ASSETS/NavigationFlow.png "Navigation flow")
                          
