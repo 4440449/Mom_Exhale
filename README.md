@@ -6,7 +6,10 @@
 - [#мамавыдохни: трекер](https://github.com/4440449/BabyTrackerWW)
 
 
-<img src="/README_ASSETS/MomExhaleDemo.gif" width="250" height="500"/>
+<img src="/README_ASSETS/MomExhaleDemo.gif" width="250" height="510"/>
+<img src="/README_ASSETS/ClamingNotificationsDemo.gif" width="250" height="510"/>
+<img src="/README_ASSETS/SamoprikormDemo.gif" width="250" height="510"/>
+<img src="/README_ASSETS/BabyTrackerDemo.gif" width="250" height="510"/>
                 
 ## Tech specs
 - Модульная архитектура, проект разделен на подпроекты, которые инъектятся через SPM обертку
