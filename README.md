@@ -5,7 +5,7 @@
 - [#мамавыдохни: самоприкорм](https://github.com/4440449/Samoprikorm_SP)
 - [#мамавыдохни: трекер](https://github.com/4440449/BabyTrackerWW)
 
-        
+![Alt Text](README_ASSETS/MomExhaleDemo.gif)
                 
 ## Tech specs
 - Модульная архитектура, проект разделен на подпроекты, которые инъектятся через SPM обертку
