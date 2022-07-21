@@ -6,7 +6,25 @@
         "repositoryURL": "https://github.com/4440449/BabyNet",
         "state": {
           "branch": "master",
-          "revision": "006d1d0e4a8beabd60bb4390971d9204139ce0d4",
+          "revision": "f6d56325f97288a3017ec8bb27a4484beb305622",
+          "version": null
+        }
+      },
+      {
+        "package": "BabyTrackerModule",
+        "repositoryURL": "https://github.com/4440449/BabyTrackerModule.git",
+        "state": {
+          "branch": "master",
+          "revision": "f96e41c0dd21dafe97a51f6d37e8e8d4c2a35850",
+          "version": null
+        }
+      },
+      {
+        "package": "CalmingNotificationsModule",
+        "repositoryURL": "https://github.com/4440449/CalmingNotificationsModule.git",
+        "state": {
+          "branch": "master",
+          "revision": "78c33646d611ca990f6cb02a06dbb21aea9f2441",
           "version": null
         }
       },
@@ -16,6 +34,15 @@
         "state": {
           "branch": "master",
           "revision": "fe9a4c92482e7336bf851662a97f6b789b5081dd",
+          "version": null
+        }
+      },
+      {
+        "package": "SamoprikormModule",
+        "repositoryURL": "https://github.com/4440449/SamoprikormModule.git",
+        "state": {
+          "branch": "master",
+          "revision": "257244d4cc831ed603b68e7e75ac4d63afcfad9b",
           "version": null
         }
       }
